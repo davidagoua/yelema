@@ -2,16 +2,58 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-md-8 col-12">
+    <div class="">
+        <div class="col-md-12 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4>Packs</h4>
-                    <div class="card-header-action">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#add-pack-modal">Ajouter</button>
-                    </div>
                 </div>
                 <div class="card-body">
+                    <div>
+                        <form action="{{ route("admin.settings.store_pack") }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
+                            <div class="">
+                                <div class="d-flex">
+                                    @csrf
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <label for=""><b>Nom du pack</b></label>
+                                            <input type="text" required name="name" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for=""><b>Description</b></label>
+                                            <textarea  required name="description" rows="5" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <b>Spécifications</b>
+                                        </div>
+                                        <template x-for="(n, index) in ns.length">
+                                            <div  class="d-flex mb-3 mx-0 px-0 justify-content-between align-items-center">
+                                                <div class="col-6">
+                                                    <input required type="text" placeholder="Nom" name="specs[labels][]" class="form-control">
+                                                </div>
+                                                <div class="col-5">
+                                                    <input type="text" placeholder="Valeur" name="specs[values][]" class="form-control">
+                                                </div>
+                                                <div class="col-1">
+                                                    <a href="#" @click="ns = ns.filter((n,i)=> i != index)"><span class="fa fa-times"></span></a>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <div class="mb-3">
+                                            <button type="button" class="btn btn-primary btn-sm" @click="ns.push(0)">+ Ajouter</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer text-right">
+                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <table class="responsive table">
                         <tr>
                             <th>Nom</th>
@@ -40,16 +82,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-12">
+        <div class="col-md-12 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4>Articles</h4>
-                    <div class="card-header-action">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#add-item-modal">Ajouter</button>
-                    </div>
                 </div>
-                <div class="card-body">
-                    <table class="responsive table">
+                <div class="card-body d-flex">
+                    <table class="responsive table col-8">
                         <tr>
                             <th>Nom</th>
                             <th>Actif</th>
@@ -98,6 +137,22 @@
                             </tr>
                         @endforelse
                     </table>
+                    <div class="col-4">
+                        <form action="{{ route("admin.items.store") }}" enctype="multipart/form-data" method="post">
+                            <div class="">
+                                <div class="">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for=""><b>Nom de l'article</b></label>
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="modal-footer text-right">
+                                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +161,5 @@
 
 
 @push('scripts')
-    <script>
 
-    </script>
 @endpush

@@ -23,6 +23,7 @@
                                 <select name="origin_type_local" id="" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full">
                                     <option>Apartement</option>
                                     <option>Maison basse</option>
+                                    <option>Villa</option>
                                 </select>
                             </div>
                             <div class="w-1/2">
@@ -41,6 +42,7 @@
                                 <select name="destination_type_local" id="" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full">
                                     <option>Apartement</option>
                                     <option>Maison basse</option>
+                                    <option>Villa</option>
                                 </select>
                             </div>
                             <div class="w-1/2">

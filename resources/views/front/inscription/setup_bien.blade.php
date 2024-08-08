@@ -1,13 +1,10 @@
 @extends('front.base')
 
-
-
-
-
 @section('content')
+    <script src="//unpkg.com/alpinejs" defer></script>
     <form action="" method="post">
         @csrf
-        <div x-data="{}" class="md:flex mb-10 md:space-x-5 pt-12 md:px-16 px-5">
+        <div x-data="{selectedBiens: [], selectedBien: null}" @change="selectedBiens.push(selectedBien)" class="md:flex mb-10 md:space-x-5 pt-12 md:px-16 px-5">
             <div class="md:w-1/2" id="drop-target">
                 <div id="map" class="shadow-lg rounded"></div>
             </div>
@@ -15,6 +12,7 @@
                 <div class="py-3 px-2 bg-white  ">
                     <div class="text-center font-bold text-lg">Biens ou Materiels à Demenager</div>
                     <div class="md:grid md:grid-cols-1 mt-5 space-y-5">
+
                         @foreach($items as $item)
                             <div>
                                 <label for="">Combien de {{ $item->name }}  avez-vous ?</label>
@@ -24,7 +22,7 @@
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
                                         </svg>
                                     </button>
-                                    <input type="text" id="{{$item->name}}-input" data-input-counter data-input-counter-min="1" data-input-counter-max="5" aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" value="0" required />
+                                    <input name="{{$item->id}}" type="text" id="{{$item->name}}-input" data-input-counter data-input-counter-min="1" data-input-counter-max="5" aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-11 font-medium text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" value="0" required />
 
                                     <button type="button" id="increment-button" data-input-counter-increment="{{$item->name}}-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300  p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                                         <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">

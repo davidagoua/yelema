@@ -1,5 +1,5 @@
 <div class="flex bg-orange-50 items-center justify-between py-5 md:px-20 px-5">
-    <a href="/" class=" ">
+    <a href="/" class=" hidden md:block ">
         <span class="fa fa-home fa-3x text-xl text-red-400"></span>
         <span class="text-gray-500">&nbsp; Qui sommes-nous ?</span>
     </a>

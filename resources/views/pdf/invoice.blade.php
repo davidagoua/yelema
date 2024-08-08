@@ -42,6 +42,8 @@
                 <th>Total</th>
             </tr>
 
+
+
         </table>
         <p><strong>Montant total : 0</strong></p>
     </div>
