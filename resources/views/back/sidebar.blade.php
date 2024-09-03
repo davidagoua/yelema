@@ -12,7 +12,7 @@
             </li>
             <li class="dropdown">
                 <a href="{{ route('admin.commandes') }}" class="nav-link "><i
-                        class="fas fa-box"></i><span>Commandes</span><span class="badge badge-pill">0</span></a>
+                        class="fas fa-box"></i><span>Commandes</span><span class="badge badge-pill"></span></a>
 
             </li>
             <li class="dropdown">
