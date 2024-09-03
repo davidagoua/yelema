@@ -66,25 +66,12 @@
                                     </tr>
                                     <tr>
                                         <td>1</td>
-                                        <td>Mouse Wireless</td>
-                                        <td class="text-center">$10.99</td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-right">$10.99</td>
+                                        <td></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-right">/td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Keyboard Wireless</td>
-                                        <td class="text-center">$20.00</td>
-                                        <td class="text-center">3</td>
-                                        <td class="text-right">$60.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Headphone Blitz TDR-3000</td>
-                                        <td class="text-center">$600.00</td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-right">$600.00</td>
-                                    </tr>
+
                                     </tbody></table>
                             </div>
                             <div class="row mt-4">
