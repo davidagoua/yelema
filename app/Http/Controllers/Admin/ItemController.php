@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Commande;
+use App\Models\CommandeState;
 use App\Models\Item;
 use App\Models\Pack;
 use Illuminate\Http\Request;
@@ -12,11 +14,15 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         $item = Item::query();
+        $commandes = Commande::query();
 
         return view('back.dashboard', [
            'items' => $item->get(),
             'page_title'=>"Tableau de bord",
-            'pack_count'=> Pack::query()->count()
+            'pack_count'=> Pack::query()->count(),
+            'pending'=> $commandes->where('status', '=', CommandeState::PENDING)->get(),
+            'canceled'=> $commandes->where('status', '=', CommandeState::CANCELED)->get(),
+            'completed'=> $commandes->where('status', '=', CommandeState::COMPLETED)->get(),
         ]);
     }
 

@@ -25,7 +25,7 @@
             </div>
             <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Opération en cour</h4>
+                    <h4>Opérations en cours</h4>
                 </div>
                 <div class="card-body">
                     0
@@ -40,7 +40,7 @@
             </div>
             <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Opération suspendu</h4>
+                    <h4>Opérations suspendus</h4>
                 </div>
                 <div class="card-body">
                     0
@@ -56,11 +56,20 @@
             </div>
             <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Opération terminé</h4>
+                    <h4>Opérations terminés</h4>
                 </div>
                 <div class="card-body">
                     0
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <div id='calendar'></div>
             </div>
         </div>
     </div>
@@ -70,6 +79,12 @@
 
 @push('scripts')
 <script>
-
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    });
 </script>
 @endpush

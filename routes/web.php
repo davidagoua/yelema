@@ -56,6 +56,7 @@ Route::prefix('/admin')
 
         Route::controller(\App\Http\Controllers\Admin\CommandeController::class)->group(function(){
             Route::get('/', 'index')->name('commandes');
+            Route::get('/details/{commande}', 'detail')->name('commande_detail');
         });
     });
 

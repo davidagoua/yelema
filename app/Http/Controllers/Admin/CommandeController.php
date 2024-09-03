@@ -17,4 +17,12 @@ class CommandeController extends Controller
             'page_title'=>'Commandes'
         ]);
     }
+
+    public function detail(Request $request, Commande $commande)
+    {
+        return view('back.detail_commande', [
+           'commande'=> $commande,
+            'page_title'=> 'Details commande #'.\Illuminate\Support\Str::padLeft($commande->id, 7, '0')
+        ]);
+    }
 }

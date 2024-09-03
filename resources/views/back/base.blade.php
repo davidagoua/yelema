@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/assets/css/components.css">
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 </head>
 
 <body>
@@ -18,9 +17,13 @@
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
         <nav class="navbar navbar-expand-lg main-navbar">
-            <div class="p-2">
+            <form class="form-inline mr-auto">
+                <ul class="navbar-nav mr-3">
+                    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+                    <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </form>
 
-            </div>
             <ul class="navbar-nav navbar-right">
                 <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
                     <div class="dropdown-menu dropdown-list dropdown-menu-right">
@@ -31,7 +34,6 @@
                                     <i class="fas fa-code"></i>
                                 </div>
                                 <div class="dropdown-item-desc">
-                                    Template update is available now!
                                     <div class="time text-primary">2 Min Ago</div>
                                 </div>
                             </a>
@@ -43,7 +45,7 @@
                     </div>
                 </li>
                 <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                        <img alt="image" src="/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
                         <div class="d-sm-none d-lg-inline-block">{{ auth()->user()->name ?? 'David' }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="" class="dropdown-item has-icon">
@@ -103,7 +105,7 @@
                     </div>
                     <div class="mb-3">
                         <label for=""><b>Description</b></label>
-                        <textarea  required name="description" rows="5" class="form-control">
+                        <textarea  required name="description" rows="5" class="form-control"></textarea>
                     </div>
                     <hr>
                     <div class="mb-3">
@@ -163,5 +165,7 @@
 <script src="/assets/js/stisla.js"></script>
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/custom.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+@stack('scripts')
 </body>
 </html>

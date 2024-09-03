@@ -16,17 +16,21 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="responsive table">
+                <table class="responsive table-responsive table-invoice table">
                     <tr>
-                        <th>Nom Client</th>
-                        <th>Contact Client</th>
-                        <th>Email Client</th>
+                        <th>N°</th>
+                        <th>Nom </th>
+                        <th>Contact</th>
+                        <th>Email</th>
                         <th>Pack</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
                     @forelse($commandes as $commande)
                         <tr x-show="'{{ $commande->nom }} {{ $commande->prenoms }}'.toLocaleLowerCase().indexOf(q) != -1">
+                            <td>
+                                <a href="{{ route('admin.commande_detail', ['commande'=>$commande]) }}">#{{ \Illuminate\Support\Str::padLeft($commande->id, 7, '0') }}</a>
+                            </td>
                             <td>{{ $commande->nom }} {{ $commande->prenoms }}</td>
                             <td>{{ $commande->contact }}</td>
                             <td>{{ $commande->email }}</td>
