@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
+use App\Models\CommandeState;
 use App\Models\Item;
 use App\Models\Pack;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -84,7 +85,8 @@ class HomeController extends Controller
                 'contact'=>$data['contact'],
                 'pack_id'=> (int) $request->input('pack'),
                 'biens' => json_encode(session()->get('biens')),
-                'localisation' => json_encode(session()->get('localisation'))
+                'localisation' => json_encode(session()->get('localisation')),
+                'status'=> CommandeState::VALIDATING
             ]);
 
             $commande->save();
