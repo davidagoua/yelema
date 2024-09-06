@@ -58,6 +58,12 @@ Route::prefix('/admin')
             Route::get('/', 'index')->name('commandes');
             Route::get('/details/{commande}', 'detail')->name('commande_detail');
         });
+
+        Route::get('/details/{commande}/{status}', function (Request $request, \App\Models\Commande $commande, int $status){
+            $commande->status = \App\Models\CommandeState::from($status);
+            $commande->save();
+            return redirect()->back();
+        })->name('set_status');
     });
 
 

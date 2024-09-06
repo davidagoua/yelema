@@ -34,5 +34,7 @@
         autoplay: true,
         path: '/assets/lotties/lottie1.json' // the path to the animation json
     });
+
+
 </script>
 @endpush

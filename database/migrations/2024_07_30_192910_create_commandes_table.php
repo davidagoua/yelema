@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('contact');
             $table->integer('pack_id');
+            $table->integer('unit_price')->nullable();
+            $table->integer('price')->nullable();
             $table->tinyInteger("status")->default(0);
         });
     }

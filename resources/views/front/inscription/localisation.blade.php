@@ -2,6 +2,7 @@
 
 
 @section('content')
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <form action="" method="post">
     @csrf
     <div x-data="{}" class="md:flex mb-16 md:space-x-5 pt-12 md:px-16 px-5">
@@ -21,9 +22,19 @@
                             <div class="w-1/2">
                                 <span>Type de local</span>
                                 <select name="origin_type_local" id="" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full">
-                                    <option>Apartement</option>
-                                    <option>Maison basse</option>
-                                    <option>Villa</option>
+                                    <optgroup label="Appartement">
+                                        <option>Rez de chaussé</option>
+                                        <option>1er Etage</option>
+                                        <option>2nd Etage</option>
+                                        <option>3eme Etage</option>
+                                        <option>4eme Etage</option>
+                                    </optgroup>
+                                    <optgroup label="Villa">
+                                        <option>Maison basse</option>
+                                        <option>Duplex</option>
+                                        <option>Triplex</option>
+                                        <option>Quadruplex</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="w-1/2">
@@ -34,15 +45,25 @@
                         <hr class="m-5">
                         <div class="w-full">
                             <span>Destination</span>
-                            <input name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Position actuelle"/>
+                            <input id="destination_point" name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Position actuelle"/>
                         </div>
                         <div class="flex space-x-3 mt-3 ">
                             <div class="w-1/2">
                                 <span>Type de local</span>
                                 <select name="destination_type_local" id="" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full">
-                                    <option>Apartement</option>
-                                    <option>Maison basse</option>
-                                    <option>Villa</option>
+                                    <optgroup label="Appartement">
+                                        <option>Rez de chaussé</option>
+                                        <option>1er Etage</option>
+                                        <option>2nd Etage</option>
+                                        <option>3eme Etage</option>
+                                        <option>4eme Etage</option>
+                                    </optgroup>
+                                    <optgroup label="Villa">
+                                        <option>Maison basse</option>
+                                        <option>Duplex</option>
+                                        <option>Triplex</option>
+                                        <option>Quadruplex</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="w-1/2">
@@ -88,6 +109,7 @@
 <script src="https://unpkg.com/htmx.org@2.0.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-locationpicker@0.3.4/src/leaflet-locationpicker.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 <script>
 
 var map = L.map('map').setView([5.343924, -4.0645722], 13);
@@ -95,6 +117,63 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+
+var latitude = null;
+var longitude = null;
+var destLatitude = null;
+var destLongitude = null;
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "La géolocalisation n'est pas prise en charge par ce navigateur.";
+    }
+}
+
+function showPosition(position) {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+
+
+    // Récupère l'élément input par son ID (à remplacer par l'ID réel)
+    var inputField = document.getElementById("origine_point");
+    inputField.value = latitude + ", " + longitude;
+
+}
+
+getLocation()
+
+
+document.querySelector('#destination_point').addEventListener('change', ()=>{
+    L.Routing.control({
+        waypoints: [
+            L.latLng(latitude, longitude),
+            L.latLng(destLatitude, destLongitude)
+        ]
+    }).addTo(map);
+})
+
+
+
+document.querySelector('#destination_point').addEventListener('focus', ()=>{
+    map.on('click', function(e) {
+        var coordinates = e.latlng;
+        destLatitude = coordinates.lat.toFixed(6);
+        destLongitude = coordinates.lng.toFixed(6);
+
+        var inputField = document.getElementById("destination_point");
+        inputField.value = destLatitude + ", " + destLongitude;
+
+        var ChangeEvent = new Event('change', {})
+        document.getElementById("destination_point").dispatchEvent(ChangeEvent)
+    });
+
+
+
+})
+
 
 
 

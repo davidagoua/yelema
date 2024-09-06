@@ -69,37 +69,10 @@
                                         <td></td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-right">/td>
+                                        <td class="text-right"></td>
                                     </tr>
 
                                     </tbody></table>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-lg-8">
-                                    <div class="section-title">Payment Method</div>
-                                    <p class="section-lead">The payment method that we provide is to make it easier for you to pay invoices.</p>
-                                    <div class="images">
-                                        <img src="assets/img/visa.png" alt="visa">
-                                        <img src="assets/img/jcb.png" alt="jcb">
-                                        <img src="assets/img/mastercard.png" alt="mastercard">
-                                        <img src="assets/img/paypal.png" alt="paypal">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 text-right">
-                                    <div class="invoice-detail-item">
-                                        <div class="invoice-detail-name">Subtotal</div>
-                                        <div class="invoice-detail-value">$670.99</div>
-                                    </div>
-                                    <div class="invoice-detail-item">
-                                        <div class="invoice-detail-name">Shipping</div>
-                                        <div class="invoice-detail-value">$15</div>
-                                    </div>
-                                    <hr class="mt-2 mb-2">
-                                    <div class="invoice-detail-item">
-                                        <div class="invoice-detail-name">Total</div>
-                                        <div class="invoice-detail-value invoice-detail-value-lg">$685.99</div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -107,10 +80,10 @@
                 <hr>
                 <div class="text-md-right">
                     <div class="float-lg-left mb-lg-0 mb-3">
-                        <button class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Process Payment</button>
-                        <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</button>
+                        <button class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Valider</button>
+                        <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Annuler</button>
                     </div>
-                    <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Print</button>
+                    <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Imprimer</button>
                 </div>
             </div>
         </div>
