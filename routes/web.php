@@ -56,7 +56,12 @@ Route::prefix('/admin')
 
         Route::controller(\App\Http\Controllers\Admin\CommandeController::class)->group(function(){
             Route::get('/', 'index')->name('commandes');
+            Route::get('/commande-valide', 'commande_valide')->name('commande_valide');
+            Route::get('/commande-en-cour', 'commande_pending')->name('commande_pending');
+            Route::get('/commande-terminee', 'commande_completed')->name('commande_completed');
             Route::get('/details/{commande}', 'detail')->name('commande_detail');
+            Route::get('/validate/{commande}', 'validate_commande')->name('validate_commande');
+            Route::post('/avance/{commande}', 'create_avance')->name('create_avance');
         });
 
         Route::get('/details/{commande}/{status}', function (Request $request, \App\Models\Commande $commande, int $status){
@@ -70,3 +75,13 @@ Route::prefix('/admin')
 Route::get('/home', function(){
     return view('front.home');
 });
+
+
+Route::get('/nb_commnande-status', function(){
+    $q = \App\Models\Commande::query()
+        ->selectRaw('count(id) as nb, status')
+        ->groupBy('status')
+        ->pluck('nb','status')
+    ;
+    return response()->json($q);
+})->name('commandes_by_status');

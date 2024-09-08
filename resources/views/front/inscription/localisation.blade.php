@@ -78,7 +78,7 @@
                 <div class="text-center font-bold text-lg">Date et heure</div>
                 <div class="flex px-2 mt-3 space-x-3 ">
                     <div class="w-1/2">
-                        <input class="p-2 bg-gray-100 border-gray-300 border w-full" name="date" type="date" placeholder="Position actuelle"/>
+                        <input class="p-2 bg-gray-100 border-gray-300 border w-full" name="date" type="date" placeholder="Adresse de destination"/>
                     </div>
                     <div class="w-1/2 relative">
                         <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
@@ -136,7 +136,6 @@ function showPosition(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-
     // Récupère l'élément input par son ID (à remplacer par l'ID réel)
     var inputField = document.getElementById("origine_point");
     inputField.value = latitude + ", " + longitude;
@@ -158,6 +157,8 @@ document.querySelector('#destination_point').addEventListener('change', ()=>{
 
 
 document.querySelector('#destination_point').addEventListener('focus', ()=>{
+    document.querySelector('#destination_point').placeholder = "Veuillez selectionner votre adresse sur la carte"
+
     map.on('click', function(e) {
         var coordinates = e.latlng;
         destLatitude = coordinates.lat.toFixed(6);

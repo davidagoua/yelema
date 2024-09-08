@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 enum CommandeState : int
 {
+    case NEWS = 0;
     case PENDING = 20;
     case COMPLETED = 50;
     case CANCELED = 30;
-    case VALIDATING = 10;
+    case VALIDATED = 10;
 }
 class Commande extends Model
 {
@@ -24,5 +26,10 @@ class Commande extends Model
     public function pack()
     {
         return $this->belongsTo(Pack::class);
+    }
+
+    public function avances(): HasMany
+    {
+        return $this->hasMany(Avance::class);
     }
 }

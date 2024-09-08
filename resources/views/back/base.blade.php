@@ -136,6 +136,9 @@
         </form>
     </div>
 </div>
+
+@yield('modal')
+
 <script src="/assets/modules/izitoast/js/iziToast.min.js"></script>
 <script>
     @if($errors->any())
