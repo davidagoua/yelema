@@ -67,7 +67,7 @@ Route::prefix('/admin')
         Route::get('/details/{commande}/{status}', function (Request $request, \App\Models\Commande $commande, int $status){
             $commande->status = \App\Models\CommandeState::from($status);
             $commande->save();
-            return redirect()->back();
+            return back()->with('success', 'Commande enregistrée');
         })->name('set_status');
     });
 

@@ -22,6 +22,7 @@
                             <th>Nom </th>
                             <th>Pack</th>
                             <th>Total</th>
+                            <th>Reste</th>
                             <th>Avance</th>
                             <th></th>
                         </tr>
@@ -32,7 +33,8 @@
                                 </td>
                                 <td>{{ $commande->nom }} {{ $commande->prenoms }}</td>
                                 <td><b class="">{{ $commande->pack->name }}</b></td>
-                                <td>{{ $commande->price }} fcaf</td>
+                                <td>{{ $commande->price }} fcfa</td>
+                                <td>{{ $commande->price - $commande->avances()->sum('montant') }} fcfa</td>
                                 <td><b class="text-primary">{{ $commande->avances()->sum('montant') }} fcfa</b></td>
 
 

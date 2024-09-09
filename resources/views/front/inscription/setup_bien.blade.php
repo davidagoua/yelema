@@ -5,9 +5,7 @@
     <form action="" method="post">
         @csrf
         <div x-data="{selectedBiens: [], selectedBien: null}" @change="selectedBiens.push(selectedBien)" class="md:flex mb-10 md:space-x-5 pt-12 md:px-16 px-5">
-            <div class="md:w-1/2" id="drop-target">
-                <div id="map" class="shadow-lg rounded"></div>
-            </div>
+
             <div  class="md:w-1/2  mt-2 md:mt-0">
                 <div class="py-3 px-2 bg-white  ">
                     <div class="text-center font-bold text-lg">Biens ou Materiels à Demenager</div>
@@ -32,18 +30,23 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="mb-3">
-                            <label for="">Commentaire</label>
-                            <textarea class="bg-gray-50 p-2 border-gray-300  font-medium  text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="comment" placeholder="Ajouter un commentaire"></textarea>
-                        </div>
 
+
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2" id="drop-target">
+                <div class="p-3 bg-white">
+                    <div class="mb-3">
+                        <div class="mb-3 text-lg text-center"><b>Commentaire</b></div>
+                        <textarea class="bg-gray-50 p-2 border-gray-300  font-medium  text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="comment" placeholder="Ajouter un commentaire"></textarea>
                     </div>
                 </div>
             </div>
         </div>
         <div class="p-3 bg-white w-full fixed bottom-0 flex shadow-lg justify-between">
             <div x-show="false">
-                <button type="submit" formtarget="#form"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Précedent</button>
+                <a href="{{ route('front.inscription.localisation') }}"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Précedent</a>
             </div>
             <div>
                 <button type="submit" formtarget="#form"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Suivant</button>

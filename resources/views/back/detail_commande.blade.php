@@ -10,8 +10,10 @@
                 <div class="invoice-print">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="invoice-title">
-                                <h2>Invoice</h2>
+                            <div class="invoice-title align-items-center">
+                                <h2>
+                                    <img src="/assets/img/yelema.png" alt="">
+                                </h2>
                                 <div class="invoice-number">Commande #{{ \Illuminate\Support\Str::padLeft($commande->id ,7, '0') }}</div>
                             </div>
                             <hr>
@@ -83,8 +85,14 @@
                 <hr>
                 <div class="text-md-right">
                     <div class="float-lg-left mb-lg-0 mb-3">
+                        @if($commande->status == \App\Models\CommandeState::NEWS->value)
                         <button data-toggle="modal" data-target="#validate-modal" class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Valider</button>
-                        <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Annuler</button>
+                        @elseif($commande->status == \App\Models\CommandeState::VALIDATED->value)
+                        @elseif($commande->status == \App\Models\CommandeState::PENDING->value)
+                        <button data-toggle="modal" data-target="#modal-avance" class="btn btn-primary btn-icon icon-left"><i class="fas fa-download"></i> Ajouter une avance</button>
+                        <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::COMPLETED]) }}" class="btn btn-success btn-icon icon-left"><i class="fas fa-check"></i> Terminer</a>
+                        @endif
+                        <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::CANCELED]) }}" class="btn  btn-outline-danger btn-icon icon-left"><i class="fas fa-times"></i>Annuler</a>
                     </div>
                     <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Imprimer</button>
                 </div>
@@ -104,6 +112,25 @@
                     <div class="mb-3">
                         <label for="">Montant</label>
                         <input name="price" type="text" required placeholder="Entrez le montant total de la facture" class="form-control">
+                    </div>
+                    <p class="float-right">
+                        <button type="submit" class="btn btn-primary">Valider</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-avance">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><b>Ajouter une avance</b></div>
+            <div class="modal-body">
+                <form method="post" action="{{ route('admin.create_avance', ['commande'=>$commande]) }}">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="">Montant</label>
+                        <input type="text" required pattern="[0-9]+" name="montant" class="form-control">
                     </div>
                     <p class="float-right">
                         <button type="submit" class="btn btn-primary">Valider</button>

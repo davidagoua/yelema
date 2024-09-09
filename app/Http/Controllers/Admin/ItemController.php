@@ -27,7 +27,7 @@ class ItemController extends Controller
         $somme_avance = Avance::query()->select('montant')->sum('montant');
         $somme_commande = Commande::query()
             ->select('status','price')
-            ->where('status','=',CommandeState::VALIDATED)
+            ->whereIn('status',[CommandeState::VALIDATED, CommandeState::PENDING, CommandeState::COMPLETED])
             ->sum('price');
 
         return view('back.dashboard', [

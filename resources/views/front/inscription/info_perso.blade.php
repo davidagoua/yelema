@@ -15,19 +15,19 @@
                 <div class="w-6/12 mt-5">
                     <div class="mb-4 w-full">
                         <span>Nom</span>
-                        <input name="nom" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Position actuelle"/>
+                        <input name="nom" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre nom"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Prénoms</span>
-                        <input name="prenoms" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Position actuelle"/>
+                        <input name="prenoms" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Email</span>
-                        <input name="email" type="email" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Position actuelle"/>
+                        <input name="email" type="email" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre email"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Contact</span>
-                        <input name="contact" type="phone" pattern="[0-9]+" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Position actuelle"/>
+                        <input name="contact" type="phone" pattern="[0-9]+" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre contact"/>
                     </div>
                     <p class="mt-5">&nbsp;</p>
                 </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="p-3 bg-white w-full fixed bottom-0 flex shadow-lg justify-between">
             <div x-show="false">
-                <button type="submit" formtarget="#form"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Précedent</button>
+                <a href="{{ route('front.inscription.pack_picking') }}"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Précedent</a>
             </div>
             <div>
                 <button type="submit" formtarget="#form"  class="button today-btn text-white bg-blue-700 !bg-primary-700 dark:bg-blue-600 dark:!bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 dark:hover:bg-blue-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Terminé</button>

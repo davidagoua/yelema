@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
+use App\Models\CommandeItem;
 use App\Models\CommandeState;
 use App\Models\Item;
 use App\Models\Pack;
@@ -85,11 +86,21 @@ class HomeController extends Controller
                 'contact'=>$data['contact'],
                 'pack_id'=> (int) $request->input('pack'),
                 'biens' => json_encode(session()->get('biens')),
-                'localisation' => json_encode(session()->get('localisation')),
-                'status'=> CommandeState::VALIDATING
+                'localisation' => session()->get('localisation'),
+                'status'=> CommandeState::NEWS
             ]);
+            $biens = collect(session()->get('biens'))->forget(['_token','comment']);
 
             $commande->save();
+
+            $biens->each(function($quantity, $item_id) use($commande) {
+                CommandeItem::create([
+                    'command_id'=>$commande->id,
+                    'item_id'=>$item_id,
+                    'quantity'=> $quantity
+                ]);
+            });
+
             session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
             $pdf = PDF::loadView('pdf.invoice', compact('commande'));
             return $pdf->download('invoice_yelema.png');

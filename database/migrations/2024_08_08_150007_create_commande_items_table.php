@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('commande_items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->bigInteger('command_id');
+            $table->bigInteger('item_id');
+            $table->integer('quantity')->default(1);
         });
     }
 

@@ -32,4 +32,9 @@ class Commande extends Model
     {
         return $this->hasMany(Avance::class);
     }
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(CommandeItem::class);
+    }
 }

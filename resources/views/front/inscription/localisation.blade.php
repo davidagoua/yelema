@@ -78,7 +78,7 @@
                 <div class="text-center font-bold text-lg">Date et heure</div>
                 <div class="flex px-2 mt-3 space-x-3 ">
                     <div class="w-1/2">
-                        <input class="p-2 bg-gray-100 border-gray-300 border w-full" name="date" type="date" placeholder="Adresse de destination"/>
+                        <input min="{{ now()->format('Y-m-d') }}" class="p-2 bg-gray-100 border-gray-300 border w-full" name="date" type="date" placeholder="Adresse de destination"/>
                     </div>
                     <div class="w-1/2 relative">
                         <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
@@ -123,6 +123,7 @@ var latitude = null;
 var longitude = null;
 var destLatitude = null;
 var destLongitude = null;
+var origin_marker = null;
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -139,6 +140,10 @@ function showPosition(position) {
     // Récupère l'élément input par son ID (à remplacer par l'ID réel)
     var inputField = document.getElementById("origine_point");
     inputField.value = latitude + ", " + longitude;
+
+    origin_marker = L.marker([latitude, longitude]).addTo(map)
+        .bindPopup('Origine')
+        .openPopup();
 
 }
 
@@ -168,11 +173,30 @@ document.querySelector('#destination_point').addEventListener('focus', ()=>{
         inputField.value = destLatitude + ", " + destLongitude;
 
         var ChangeEvent = new Event('change', {})
-        document.getElementById("destination_point").dispatchEvent(ChangeEvent)
+        inputField.dispatchEvent(ChangeEvent)
+        inputField.blur()
     });
+})
 
+document.querySelector('#origine_point').addEventListener('focus', ()=>{
 
+    map.on('click', function(e) {
+        var coordinates = e.latlng;
+        latitude = coordinates.lat.toFixed(6);
+        longitude = coordinates.lng.toFixed(6);
 
+        var inputField = document.getElementById("origine_point");
+        inputField.value = latitude + ", " + longitude;
+
+        var ChangeEvent = new Event('change', {})
+        inputField.dispatchEvent(ChangeEvent)
+        inputField.blur()
+
+        map.removeLayer(origin_marker)
+        origin_marker = L.marker([latitude, longitude]).addTo(map)
+            .bindPopup('Origine')
+            .openPopup();
+    });
 })
 
 

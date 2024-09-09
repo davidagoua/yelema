@@ -90,6 +90,7 @@ class CommandeController extends Controller
             ->map(function($commande){
                 return [
                     'color'=>'#3788d8',
+                    'id'=>$commande->id,
                     'start'=>$commande->localisation['date'],
                     'end'=>$commande->localisation['date'],
                     'title'=>$commande->pack->name
