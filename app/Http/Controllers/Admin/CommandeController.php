@@ -85,7 +85,7 @@ class CommandeController extends Controller
     public function commandeByDate(Request $request)
     {
         $commandes = Commande::query()
-            ->where('status', '=', CommandeState::VALIDATED)
+            ->whereIn('status',  [CommandeState::VALIDATED, CommandeState::PENDING])
             ->get()
             ->map(function($commande){
                 return [
