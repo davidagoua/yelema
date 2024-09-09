@@ -33,7 +33,7 @@
                     </div>
                     <div class="card-stats-item">
                         <div class="card-stats-item-count">{{ $validated }}</div>
-                        <div class="card-stats-item-label">Validées</div>
+                        <div class="card-stats-item-label">A effectuer</div>
                     </div>
                     <div class="card-stats-item">
                         <div class="card-stats-item-count">{{ $pending }}</div>

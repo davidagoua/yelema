@@ -15,7 +15,7 @@
                 <a href="{{ route('admin.commandes') }}" class="nav-link "><i class="fas fa-file-signature"></i><span>En attente</span><span class="badge badge-pill" x-text="nbCommande[0] ?? 0"></span></a>
             </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_valide' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commande_valide') }}" class="nav-link "><i class="fas fa-check-circle"></i><span>Validée</span><span class="badge badge-pill" x-text="nbCommande[10] ?? 0"></span></a>
+                <a href="{{ route('admin.commande_valide') }}" class="nav-link "><i class="fas fa-check-circle"></i><span>A effectuer</span><span class="badge badge-pill" x-text="nbCommande[10] ?? 0"></span></a>
             </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_pending' ? 'active' : ''  }}">
                 <a href="{{ route('admin.commande_pending') }}" class="nav-link "><i class="fas fa-hourglass-end"></i><span>En cours</span><span class="badge badge-pill" x-text="nbCommande[20] ?? 0"></span></a>
