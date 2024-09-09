@@ -85,3 +85,5 @@ Route::get('/nb_commnande-status', function(){
     ;
     return response()->json($q);
 })->name('commandes_by_status');
+
+Route::get('/commande-by-date', [\App\Http\Controllers\Admin\CommandeController::class, 'commandeByDate'])->name('commande_by_date');

@@ -12,16 +12,16 @@
             </li>
             <li class="menu-header">Commandes</li>
             <li class=" {{ request()->route()->getName() === 'admin.commandes' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commandes') }}" class="nav-link "><i class="fas fa-file-signature"></i><span>En attente</span><span class="badge badge-pill" x-text="nbCommande[{{\App\Models\CommandeState::NEWS}}] ?? 0"></span></a>
+                <a href="{{ route('admin.commandes') }}" class="nav-link "><i class="fas fa-file-signature"></i><span>En attente</span><span class="badge badge-pill" x-text="nbCommande[0] ?? 0"></span></a>
             </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_valide' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commande_valide') }}" class="nav-link "><i class="fas fa-check-circle"></i><span>Validée</span><span class="badge badge-pill" x-text="nbCommande[{{\App\Models\CommandeState::VALIDATED}}] ?? 0"></span></a>
+                <a href="{{ route('admin.commande_valide') }}" class="nav-link "><i class="fas fa-check-circle"></i><span>Validée</span><span class="badge badge-pill" x-text="nbCommande[10] ?? 0"></span></a>
             </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_pending' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commande_pending') }}" class="nav-link "><i class="fas fa-hourglass-end"></i><span>En cours</span><span class="badge badge-pill" x-text="nbCommande[{{\App\Models\CommandeState::PENDING}}] ?? 0"></span></a>
+                <a href="{{ route('admin.commande_pending') }}" class="nav-link "><i class="fas fa-hourglass-end"></i><span>En cours</span><span class="badge badge-pill" x-text="nbCommande[20] ?? 0"></span></a>
             </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_completed' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commande_completed') }}" class="nav-link "><i class="fas fa-box"></i><span>Terminées</span><span class="badge badge-pill" x-text="nbCommande[{{\App\Models\CommandeState::COMPLETED}}] ?? 0"></span></a>
+                <a href="{{ route('admin.commande_completed') }}" class="nav-link "><i class="fas fa-box"></i><span>Terminées</span><span class="badge badge-pill" x-text="nbCommande[50] ?? 0"></span></a>
             </li>
 
             <li class="menu-header">Paramètres</li>

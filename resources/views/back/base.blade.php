@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/modules/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="/assets/css/components.css">
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
@@ -138,26 +139,7 @@
 </div>
 
 @yield('modal')
-
 <script src="/assets/modules/izitoast/js/iziToast.min.js"></script>
-<script>
-    @if($errors->any())
-        @foreach ($errors->all() as $error)
-        iziToast.error({
-            title: 'Erreur',
-            message: '{{ $error }}',
-            position: 'topRight'
-        });
-        @endforeach
-    @endif
-    @if(session()->has('success'))
-        iziToast.success({
-            title: 'Erreur',
-            message: '{{ session()->get('success') }}',
-            position: 'topRight'
-        });
-    @endif
-</script>
 <!-- General JS Scripts -->
 <script src="/assets/modules/jquery.min.js"></script>
 <script src="/assets/modules/popper.js"></script>
@@ -169,6 +151,23 @@
 <script src="/assets/js/scripts.js"></script>
 <script src="/assets/js/custom.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+
+<script>
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            toastr.error('{{ $error }}');
+        @endforeach
+    @endif
+    @if(session()->has('success'))
+        iziToast.success({
+            title: 'Succès',
+            message: '{{ session()->get('success') }}',
+            position: 'topRight'
+        });
+    toastr.success('{{ session()->get('success') }}');
+    @endif
+</script>
 @stack('scripts')
 </body>
 </html>

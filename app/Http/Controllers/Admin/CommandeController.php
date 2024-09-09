@@ -33,7 +33,7 @@ class CommandeController extends Controller
         $commande->price = $request->input('price');
         $commande->status = CommandeState::VALIDATED;
         $commande->save();
-        return back()->with('success', "Commande Valider");
+        return back()->with('success', "Commande Validée");
     }
 
     public function commande_valide(Request $request)
@@ -74,13 +74,29 @@ class CommandeController extends Controller
             'montant'=>$montant,
             'commande_id'=>$commande->id
         ]);
-
-        if($commande->status == CommandeState::VALIDATED){
+        if($commande->status == CommandeState::VALIDATED->value){
             $commande->status = CommandeState::PENDING;
             $commande->save();
         }
 
         return back()->with('success', 'Avance enrégistré');
+    }
+
+    public function commandeByDate(Request $request)
+    {
+        $commandes = Commande::query()
+            ->where('status', '=', CommandeState::VALIDATED)
+            ->get()
+            ->map(function($commande){
+                return [
+                    'color'=>'#3788d8',
+                    'start'=>$commande->localisation['date'],
+                    'end'=>$commande->localisation['date'],
+                    'title'=>$commande->pack->name
+                ];
+            });
+
+        return response()->json($commandes);
     }
 
 }

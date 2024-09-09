@@ -20,10 +20,9 @@
                         <tr>
                             <th>N°</th>
                             <th>Nom </th>
-                            <th>Contact</th>
-                            <th>Email</th>
                             <th>Pack</th>
-                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Avance</th>
                             <th></th>
                         </tr>
                         @forelse($commandes as $commande)
@@ -32,19 +31,19 @@
                                     <a href="{{ route('admin.commande_detail', ['commande'=>$commande]) }}">#{{ \Illuminate\Support\Str::padLeft($commande->id, 7, '0') }}</a>
                                 </td>
                                 <td>{{ $commande->nom }} {{ $commande->prenoms }}</td>
-                                <td>{{ $commande->contact }}</td>
-                                <td>{{ $commande->email }}</td>
-                                <td><b class="text-primary">{{ $commande->pack->name }}</b></td>
+                                <td><b class="">{{ $commande->pack->name }}</b></td>
+                                <td>{{ $commande->price }} fcaf</td>
+                                <td><b class="text-primary">{{ $commande->avances()->sum('montant') }} fcfa</b></td>
 
 
                                 <td class="d-flex align-items-center">
                                     <a class="btn btn-primary btn-sm" href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
                                         <span class="fa fa-eye "></span>
                                     </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
-                                        <span class="fa fa-trash text-danger"></span>
+                                    <a href="" class="btn btn-primary btn-sm" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                        <span class="fa fa-trash"></span>
                                     </a> &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a class="#" data-toggle="modal" >
+                                    <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" >
                                         <span class="fa fa-edit text-default"></span>
                                     </a>
                                 </td>

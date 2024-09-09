@@ -38,14 +38,14 @@
 
 
                             <td class="d-flex align-items-center">
-                                <a class="btn btn-primary btn-sm" href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                <a title="Details" class="btn btn-primary btn-sm" href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
                                     <span class="fa fa-eye "></span>
                                 </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
-                                    <span class="fa fa-trash text-danger"></span>
+                                <a href="" title="Supprimer" class="btn btn-primary btn-sm" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                    <span class="fa fa-trash"></span>
                                 </a> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a class="#" data-toggle="modal" >
-                                    <span class="fa fa-edit text-default"></span>
+                                <a href="#" title="Annuler" class="btn btn-primary btn-sm" data-toggle="modal" >
+                                    <span class="fa fa-times text-default"></span>
                                 </a>
                             </td>
                         </tr>
@@ -61,3 +61,5 @@
 </div>
 
 @endsection
+
+
