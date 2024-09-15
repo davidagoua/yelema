@@ -4,7 +4,7 @@
         <span class="text-gray-500">&nbsp; Qui sommes-nous ?</span>
     </a>
     <div class="text-center">
-        <img src="/assets/img/yelema.png" height="125" width="125" alt="">
+        <a href="/"><img src="/assets/img/yelema.png" height="125" width="125" alt=""></a>
     </div>
     <div class=" ">
         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="p-3 rounded  bg-gradient-to-r font-bold text-lg text-white from-orange-400 to-orange-600"> <i class="fa-solid fa-headset mr-2"></i> Parler à un agent</button>
