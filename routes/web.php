@@ -21,6 +21,7 @@ Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
     Route::any('/inscription-biens', 'setup_bien')->name('front.inscription.setup_bien');
     Route::any('/inscription-packs', 'pack_picking')->name('front.inscription.pack_picking');
     Route::any('/inscription-informations', 'info_perso')->name('front.inscription.info_perso');
+    Route::any('/inscription-terminee/{commande}/', 'commande_done')->name('front.inscription.commande_done');
 });
 
 Route::get('/admin', [\App\Http\Controllers\Admin\ItemController::class, 'index'])->middleware(['auth']);
@@ -87,3 +88,12 @@ Route::get('/nb_commnande-status', function(){
 })->name('commandes_by_status');
 
 Route::get('/commande-by-date', [\App\Http\Controllers\Admin\CommandeController::class, 'commandeByDate'])->name('commande_by_date');
+
+
+Route::get('/send-mail', function(Request $request){
+    $commande = \App\Models\Commande::query()->find(13);
+    \Illuminate\Support\Facades\Mail::to(['info@bright-event.online'])->send(
+        new \App\Mail\CommandeRegisteredMail($commande)
+    );
+    return redirect('/');
+});

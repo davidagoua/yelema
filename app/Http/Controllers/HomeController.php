@@ -101,12 +101,19 @@ class HomeController extends Controller
                 ]);
             });
 
-            session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
-            $pdf = PDF::loadView('pdf.invoice', compact('commande'));
-            return $pdf->download('invoice_yelema.png');
-
+            return redirect()->route('front.inscription.commande_done', ['commande'=>$commande]);
         }
 
         return view('front.inscription.info_perso');
+    }
+
+    public function commande_done(Request $request, Commande $commande)
+    {
+        \Illuminate\Support\Facades\Mail::to(['info@bright-event.online'])->send(
+            new \App\Mail\CommandeRegisteredMail($commande)
+        );
+        session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
+        $pdf = PDF::loadView('pdf.invoice', compact('commande'));
+        return $pdf->download('invoice_yelema.png');
     }
 }

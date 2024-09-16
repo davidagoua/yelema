@@ -35,6 +35,6 @@ class Commande extends Model
 
     public function items(): HasMany
     {
-        return $this->hasMany(CommandeItem::class);
+        return $this->hasMany(CommandeItem::class, 'command_id');
     }
 }
