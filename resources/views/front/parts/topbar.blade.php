@@ -1,14 +1,26 @@
 <div class="flex bg-orange-50 items-center justify-between py-5 md:px-20 px-5">
-    <a href="/" class=" hidden md:block ">
+    <a href="/" class="  hidden md:block ">
         <span class="fa fa-home fa-3x text-xl text-red-400"></span>
         <span class="text-gray-500">&nbsp; Qui sommes-nous ?</span>
     </a>
     <div class="text-center">
         <a href="/"><img src="/assets/img/yelema.png" height="125" width="125" alt=""></a>
     </div>
-    <div class=" ">
+    <div class=" hidden md:block">
         <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="p-3 rounded  bg-gradient-to-r font-bold text-lg text-white from-orange-400 to-orange-600"> <i class="fa-solid fa-headset mr-2"></i> Parler à un agent</button>
     </div>
+    <div class=" md:hidden">
+        <button id="menu_button"  class="p-3 rounded  bg-gradient-to-r font-bold text-lg text-white from-orange-400 to-orange-600"> <i class="fa fa-bars "></i> </button>
+    </div>
+    <ul id="navbar-menu" class="bg-black/80 p-3 text-white z-50 backdrop-blur-sm duration-700 transtion-all  -left-[120%] absolute min-w-[70vw] justify-center flex gap-8 top-0 flex-col  min-h-screen">
+        <li>
+            <a href="/" class="text-xl pl-16 hover:text-orange-400">Acceuil</a>
+        </li>
+        <li>
+            <a href="/" class="text-xl pl-16 hover:text-orange-400">Qui sommes nous ?</a>
+        </li>
+        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="p-3 rounded  bg-gradient-to-r font-bold text-lg text-white from-orange-400 to-orange-600"> <i class="fa-solid fa-headset mr-2"></i> Parler à un agent</button>
+    </ul>
     <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden z-100 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
@@ -40,3 +52,12 @@
         </div>
     </div>
 </div>
+<script>
+    let navbarMenu = document.querySelector("#navbar-menu")
+    let menuButton = document.querySelector("#menu_button")
+
+
+    menuButton.addEventListener('click', ()=>{
+        navbarMenu.classList.toggle("-left-[120%]")
+    })
+</script>
