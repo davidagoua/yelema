@@ -43,7 +43,8 @@ class SettingController extends Controller
             'specs.*.labels'=>'array',
             'specs.*.values'=>'array'
         ]);
-        $pack->fill($request->only(['name','description']))->save();
+        $pack->description = $request->input('description');
+        $pack->fill($request->only(['name']))->save();
         $specs = [];
         //dd($request->input());
         if($request->has('specs')){
