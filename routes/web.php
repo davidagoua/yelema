@@ -63,7 +63,7 @@ Route::prefix('/admin')
             Route::get('/details/{commande}', 'detail')->name('commande_detail');
             Route::get('/validate/{commande}', 'validate_commande')->name('validate_commande');
             Route::post('/avance/{commande}', 'create_avance')->name('create_avance');
-            Route::post('/commande/{commande}/supprimer', 'delete')->name('commande_delete');
+            Route::get('/commande/{commande}/supprimer', 'delete')->name('commande_delete');
         });
 
         Route::get('/details/{commande}/{status}', function (Request $request, \App\Models\Commande $commande, int $status){
