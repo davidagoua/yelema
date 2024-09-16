@@ -100,4 +100,11 @@ class CommandeController extends Controller
         return response()->json($commandes);
     }
 
+    public function delete(Commande $commande)
+    {
+        $commande->items()->delete();
+        $commande->delete();
+        return back()->with('success', "Commande supprimée");
+    }
+
 }

@@ -38,10 +38,10 @@
 
 
                             <td class="d-flex align-items-center">
-                                <a title="Details" class="btn btn-primary btn-sm" href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                <a title="Details" class="btn btn-primary btn-sm" href="" >
                                     <span class="fa fa-eye "></span>
                                 </a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" title="Supprimer" class="btn btn-primary btn-sm" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('commande_detele', ['commande'=>$commande]) }}" title="Supprimer" class="btn btn-primary btn-sm" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
                                     <span class="fa fa-trash"></span>
                                 </a> &nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="#" title="Annuler" class="btn btn-primary btn-sm" data-toggle="modal" >
