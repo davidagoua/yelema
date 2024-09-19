@@ -11,7 +11,7 @@
             <div class="p-3 w-full bg-white text-center">
                 <span class="text-2xl">Choix du pack</span>
             </div>
-            <div class="mt-4 md:grid md:grid-cols-3 space-x-3">
+            <div class="mt-4 md:grid md:grid-cols-3 md:space-x-3">
                 @foreach($packs as $pack)
                 <div class="bg-white col">
                     <div class="p-3 text-center bg-[#C54C44] text-lg">{{ $pack->name }}</div>
