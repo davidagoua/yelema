@@ -12,14 +12,14 @@
                 <span class="text-2xl">Informations personnelles</span>
             </div>
             <div class="mt-4 bg-white flex w-full justify-center">
-                <div class="w-6/12 mt-5">
+                <div class=" w-10/12 md:w-6/12 mt-5">
                     <div class="mb-4 w-full">
                         <span>Nom</span>
-                        <input name="nom" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre nom"/>
+                        <input name="nom" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre nom"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Prénoms</span>
-                        <input name="prenoms" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
+                        <input name="prenoms" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Email</span>
