@@ -13,7 +13,7 @@
             </div>
             <div class="mt-4 md:grid md:grid-cols-3 md:space-x-3">
                 @foreach($packs as $pack)
-                <div class="bg-white col">
+                <div class="bg-white sm:mt-2 col">
                     <div class="p-3 text-center bg-[#C54C44] text-lg">{{ $pack->name }}</div>
                     <div class="p-4 bg-white">
                         {{ $pack->description }}
