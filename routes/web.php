@@ -94,9 +94,10 @@ Route::get('/commande-by-date', [\App\Http\Controllers\Admin\CommandeController:
 
 
 Route::get('/send-mail', function(Request $request){
-    $commande = \App\Models\Commande::query()->find(13);
+    $commande = \App\Models\Commande::query()->first();
     \Illuminate\Support\Facades\Mail::to(['info@bright-event.online'])->send(
         new \App\Mail\CommandeRegisteredMail($commande)
     );
     return redirect('/');
 });
+
