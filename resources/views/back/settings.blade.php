@@ -65,10 +65,10 @@
                                 <td>{{ $pack->name }}</td>
 
                                 <td class="d-flex">
-                                    <a href="" hx-confirm="Voulez-vous vraiment supprimer cet article ?">
+                                    <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.settings.delete_pack', ['pack'=>$pack]) }}" >
                                         <span class="fa fa-trash text-danger"></span>
                                     </a> &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a class="#" data-toggle="modal" >
+                                    <a class="#" data-toggle="modal" data-target="#edit-pack-{{ $pack->id }}" >
                                         <span class="fa fa-edit text-default"></span>
                                     </a>
                                 </td>
@@ -157,6 +157,43 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('modal')
+    @foreach($packs as $pack)
+        <div class="modal fade" id="edit-pack-{{ $pack->id }}">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Modifier le pack
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.settings.update_pack', ['pack'=>$pack]) }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
+                            <div class="">
+                                <div class="">
+                                    @csrf
+                                    <div class="">
+                                        <div class="mb-3">
+                                            <label for=""><b>Nom du pack</b></label>
+                                            <input type="text" value="{{ $pack->name }}" required name="name" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for=""><b>Description</b></label>
+                                            <textarea  required name="description"  rows="5" class="form-control">{{ $pack->description }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer text-right">
+                                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection
 
 

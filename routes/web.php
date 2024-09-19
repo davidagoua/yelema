@@ -53,6 +53,8 @@ Route::prefix('/admin')
         Route::controller(\App\Http\Controllers\Admin\SettingController::class)->group(function(){
             Route::get("/settings", 'index')->name('settings');
             Route::post("/settings/pack", 'store_pack')->name('settings.store_pack');
+            Route::post("/settings/pack/{pack}/update", 'update_pack')->name('settings.update_pack');
+            Route::get("/settings/pack/{pack}/delete", 'delete_pack')->name('settings.delete_pack');
         });
 
         Route::controller(\App\Http\Controllers\Admin\CommandeController::class)->group(function(){

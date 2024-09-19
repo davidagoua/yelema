@@ -13,7 +13,7 @@ class SettingController extends Controller
 {
     public function index(Request $request)
     {
-        $packs = Pack::query();
+        $packs = Pack::query()->orderBy("created_at");
         $items = Item::query();
 
         return view('back.settings',[
@@ -56,10 +56,15 @@ class SettingController extends Controller
             }
         }
 
-
         $pack->specs()->saveMany($specs);
         $pack->save();
 
         return redirect()->route('admin.settings')->with('success',"Pack ajouté");
+    }
+
+    public function delete_pack(Pack $pack)
+    {
+        $pack->delete();
+        return back()->with('success', "Pack supprimé");
     }
 }
