@@ -109,7 +109,7 @@ class HomeController extends Controller
 
     public function commande_done(Request $request, Commande $commande)
     {
-        \Illuminate\Support\Facades\Mail::to(['info@bright-event.online'])->send(
+        \Illuminate\Support\Facades\Mail::to([$commande->email])->send(
             new \App\Mail\CommandeRegisteredMail($commande)
         );
         session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
