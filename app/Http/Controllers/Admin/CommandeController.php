@@ -7,6 +7,7 @@ use App\Models\Avance;
 use App\Models\Commande;
 use App\Models\CommandeState;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CommandeController extends Controller
 {
@@ -33,6 +34,11 @@ class CommandeController extends Controller
         $commande->price = $request->input('price');
         $commande->status = CommandeState::VALIDATED;
         $commande->save();
+
+        Mail::to([$commande->email])->send(
+            new \App\Mail\CommandeConfirmation($commande)
+        );
+
         return back()->with('success', "Commande Validée");
     }
 

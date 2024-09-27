@@ -4,7 +4,7 @@
             transition: position 1s ease-in-out;
         }
     </style>
-    <ul id="navbar-menu" class="bg-black/80 p-3 transition-position overflow-hidden -px-5 text-white z-50 backdrop-blur-sm  transtion-all duration-300 easy-in-out transition  left-[-100%] absolute min-w-[70vw] justify-center flex gap-8 top-0 flex-col  min-h-screen">
+    <ul id="navbar-menu" class="bg-black/80 p-3   transition-position overflow-hidden -px-5 text-white z-50 backdrop-blur-sm  transtion-all duration-300 easy-in-out transition  left-[-100%] absolute min-w-[70vw] justify-center flex gap-8 top-0 flex-col  min-h-screen">
         <li>
             <a href="/" class="text-xl pl-5 hover:text-orange-400">Acceuil</a>
         </li>
