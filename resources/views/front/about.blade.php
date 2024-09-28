@@ -8,7 +8,7 @@
         <div data-aos="fade-up" data-aos-duration="2000" class="text-center md:text-left pt-12 pb-7 order-last md:order-first md:w-7/12">
             <h3 class="bg-gradient-to-r from-orange-400 md:text-5xl text-3xl font-bold to-red-500 inline-block text-transparent bg-clip-text">À propos de YELEMA</h3>
             <p class="text-xl mt-5 text-gray-700">
-                YELEMA est votre partenaire de confiance pour tous vos besoins en déménagement. Fondée en 2010, notre entreprise s'est bâtie sur des valeurs de professionnalisme, de fiabilité et d'attention aux détails.
+                YELEMA est votre partenaire de confiance pour tous vos besoins en déménagement. Fondée en 2022, notre entreprise s'est bâtie sur des valeurs de professionnalisme, de fiabilité et d'attention aux détails.
             </p>
             <p class="text-xl mt-3 text-gray-700">
                 Notre équipe d'experts dévoués s'engage à rendre votre expérience de déménagement aussi fluide et sans stress que possible.

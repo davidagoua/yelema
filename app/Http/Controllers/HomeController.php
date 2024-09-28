@@ -121,17 +121,18 @@ class HomeController extends Controller
         $pdf = PDF::loadView('pdf.invoice', compact('commande'));
         $pdfContent = $pdf->output();
 
-        return response()->streamDownload(
-            function() use ($pdfContent) {
-                echo $pdfContent;
-            },
-            'facture_yelema.pdf'
-        )->header('Content-Type', 'application/pdf')
+        return response()->header('Content-Type', 'application/pdf')
          ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
          ->header('Pragma', 'no-cache')
          ->header('Expires', '0')
-         ->header('Refresh', '0;url=' . route('front.index'));
+         ->header('Refresh', '0;url=' . route('front.index'))
+        ->streamDownload(
+                function() use ($pdfContent) {
+                    echo $pdfContent;
+                },
+                'facture_yelema.pdf'
+            );
     }
 
-   
+
 }
