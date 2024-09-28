@@ -18,6 +18,11 @@ class HomeController extends Controller
         return view('front.home');
     }
 
+    public function about(Request $request)
+    {
+        return view('front.about');
+    }
+
     public function inscription_localisation(Request $request)
     {
         if($request->isMethod('post')){
@@ -114,6 +119,19 @@ class HomeController extends Controller
         );
         session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
         $pdf = PDF::loadView('pdf.invoice', compact('commande'));
-        return $pdf->download('invoice_yelema.png');
+        $pdfContent = $pdf->output();
+
+        return response()->streamDownload(
+            function() use ($pdfContent) {
+                echo $pdfContent;
+            },
+            'facture_yelema.pdf'
+        )->header('Content-Type', 'application/pdf')
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+         ->header('Pragma', 'no-cache')
+         ->header('Expires', '0')
+         ->header('Refresh', '0;url=' . route('front.index'));
     }
+
+   
 }

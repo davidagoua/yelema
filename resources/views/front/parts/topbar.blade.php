@@ -9,7 +9,7 @@
             <a href="/" class="text-xl pl-5 hover:text-orange-400">Acceuil</a>
         </li>
         <li>
-            <a href="/" class="text-xl pl-5 hover:text-orange-400">Qui sommes nous ?</a>
+            <a href="{{ route('front.about') }}" class="text-xl pl-5 hover:text-orange-400">Qui sommes nous ?</a>
         </li>
         <li class="flex-1">
 
@@ -19,7 +19,7 @@
 
     </ul>
     <div class="flex bg-orange-50 items-center justify-between py-5 md:px-20 px-5">
-        <a href="/" class="  hidden md:block ">
+        <a href="{{ route('front.about') }}" class="  hidden md:block ">
             <span class="fa fa-home fa-3x text-xl text-red-400"></span>
             <span class="text-gray-500">&nbsp; Qui sommes-nous ?</span>
         </a>

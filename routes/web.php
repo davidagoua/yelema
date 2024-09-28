@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(App\Http\Controllers\HomeController::class)->group(function(){
     Route::get('/', 'index')->name('front.index');
+    Route::get('/about', 'about')->name('front.about');
     Route::any('/inscription-localisation', 'inscription_localisation')->name('front.inscription.localisation');
     Route::any('/inscription-biens', 'setup_bien')->name('front.inscription.setup_bien');
     Route::any('/inscription-packs', 'pack_picking')->name('front.inscription.pack_picking');
