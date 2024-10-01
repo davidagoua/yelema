@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"  rel="stylesheet" />
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/sse.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @stack('style')
 
@@ -46,6 +47,23 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        @if(session()->has('get_pdf'))
+            console.log("get_pdf");
+            // download pdf
+            window.location.href = "/download-facture/{{ session()->get('commande_id') }}";
+            @php
+                session()->forget('get_pdf');
+            @endphp
+
+        @endif
+
+        @if(session()->has('success'))
+            Swal.fire("{{ session()->get('success') }}");
+            @php
+                session()->forget('success');
+            @endphp
+        @endif
     </script>
     @stack('script')
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>

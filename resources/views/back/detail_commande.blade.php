@@ -2,10 +2,11 @@
 
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <section class="section">
 
-
         <div class="section-body">
+
             <div class="invoice">
                 <div class="invoice-print">
                     <div class="row">
@@ -64,6 +65,7 @@
                                         <th data-width="40" style="width: 40px;">#</th>
                                         <th>Nom</th>
                                         <th class="text-center">Quantité</th>
+                                        <th class="text-center">Articles</th>
                                         <th class="text-center">Prix</th>
                                     </tr>
                                     <tr>
@@ -72,6 +74,9 @@
                                             {{ $commande->pack->name }}
                                         </td>
                                         <td class="text-center">1</td>
+                                        <td class="text-center">
+                                            @foreach($commande->items as $item) {{ $item->name}} x {{ $item->quantity }} <br> @endforeach
+                                        </td>
                                         <td class="text-center">
                                             {{ $commande->price }} FCFA
                                         </td>
@@ -94,12 +99,11 @@
                         @endif
                         <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::CANCELED]) }}" class="btn  btn-outline-danger btn-icon icon-left"><i class="fas fa-times"></i>Annuler</a>
                     </div>
-                    <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Imprimer</button>
+                    <a href="{{ route('download_facture', ['commande'=>$commande]) }}" class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i> Imprimer</a>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
 
 @section('modal')
@@ -140,4 +144,39 @@
         </div>
     </div>
 </div>
+<div class="section">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="map" class=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
+
+@push('scripts')
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-locationpicker@0.3.4/src/leaflet-locationpicker.min.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script>
+    var map = L.map('map').setView([5.343924, -4.0645722], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+
+</script>
+@endpush
+@push('style')
+
+    <style>
+        #map { height: 550px; }
+
+    </style>
+@endpush

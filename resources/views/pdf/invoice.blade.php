@@ -1,55 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Reçu de Paiement</title>
+    <meta charset="UTF-8">
+    <title>Facture - Yelema</title>
     <style>
-        /* Ici, tu peux ajouter tes styles CSS pour personnaliser l'apparence du reçu */
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
-        .receipt {
-            width: 700px;
+        .invoice {
+            max-width: 800px;
             margin: 0 auto;
-            border: 1px solid #ccc;
-            padding: 20px;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
         }
         .header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
-        .body {
-            margin-top: 20px;
+        .logo {
+            max-width: 150px;
+        }
+        .invoice-details {
+            text-align: right;
+        }
+        h1 {
+            color: #005f73;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #005f73;
+        }
+        .total {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: right;
+            color: #005f73;
         }
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
+            color: #777;
+            font-size: 0.9em;
+        }
+        .customer-info {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-<div class="receipt">
-    <div class="header">
-        <img src="{{ public_path('/assets/img/yelema.png') }}" alt="">
-        <h1>Votre Reçu</h1>
-        <p>Numéro de commande : {{ $commande->id }}</p>
-        <p>Date : {{ $commande->created_at }}</p>
-    </div>
-    <div class="body">
+    <div class="invoice">
+        <div class="header">
+            <img src="{{ public_path('/assets/img/yelema.png') }}" alt="Yelema Logo" class="logo">
+            <div class="invoice-details">
+                <h1>Facture</h1>
+                <p>Numéro de commande : {{ $commande->id }}</p>
+                <p>Date : {{ $commande->created_at->format('d/m/Y') }}</p>
+            </div>
+        </div>
+
+        <div class="customer-info">
+            <h2>Informations client</h2>
+            <p><strong>Nom :</strong> {{ $commande->nom }} {{ $commande->prenoms }}</p>
+            <p><strong>Email :</strong> {{ $commande->email }}</p>
+            <p><strong>Contact :</strong> {{ $commande->contact }}</p>
+        </div>
+
         <table>
-            <tr>
-                <th>Article</th>
-                <th>Quantité</th>
-                <th>Prix unitaire</th>
-                <th>Total</th>
-            </tr>
-
-
-
+            <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Quantité</th>
+                    <th>Articles</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                        <td>{{ $commande->pack->name }}</td>
+                        <td>1</td>
+                        <td>@foreach($commande->items as $item) {{ $item->name}} x {{ $item->quantity }} <br> @endforeach</td>
+                    </tr>
+                   
+            </tbody>
         </table>
-        <p><strong>Montant total : 0</strong></p>
+
+        <div class="total">
+            @if($commande->status == \App\Models\CommandeState::NEWS->value)
+            <p>NB: Le montant de la facture vous sera envoyé par email</p>
+            @else
+            <p>Total : {{ number_format($commande->price, 0, ',', ' ') }} FCFA</p>
+            @endif
+        </div>
+
+        <div class="footer">
+            <p>Merci pour votre confiance. Pour toute question, veuillez nous contacter à support@yelema.com</p>
+        </div>
     </div>
-    <div class="footer">
-        <p>Merci de votre achat !</p>
-    </div>
-</div>
 </body>
 </html>

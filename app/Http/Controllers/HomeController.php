@@ -9,7 +9,7 @@ use App\Models\Item;
 use App\Models\Pack;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\StreamedResponse;
+
 
 class HomeController extends Controller
 {
@@ -106,32 +106,24 @@ class HomeController extends Controller
                 ]);
             });
 
-            return redirect()->route('front.inscription.commande_done', ['commande'=>$commande]);
+            \Illuminate\Support\Facades\Mail::to([$commande->email])->send(
+                new \App\Mail\CommandeRegisteredMail($commande)
+            );
+            session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
+            session()->flash('get_pdf', true);
+            session()->flash('commande_id', $commande->id);
+            return redirect()->route('front.index');
         }
 
         return view('front.inscription.info_perso');
     }
 
-    public function commande_done(Request $request, Commande $commande)
-    {
-        \Illuminate\Support\Facades\Mail::to([$commande->email])->send(
-            new \App\Mail\CommandeRegisteredMail($commande)
-        );
-        session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
-        $pdf = PDF::loadView('pdf.invoice', compact('commande'));
-        $pdfContent = $pdf->output();
 
-        return response()->header('Content-Type', 'application/pdf')
-         ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
-         ->header('Pragma', 'no-cache')
-         ->header('Expires', '0')
-         ->header('Refresh', '0;url=' . route('front.index'))
-        ->streamDownload(
-                function() use ($pdfContent) {
-                    echo $pdfContent;
-                },
-                'facture_yelema.pdf'
-            );
+    public function download_facture(Request $request, Commande $commande)
+    {
+        $pdf = PDF::loadView('pdf.invoice', compact('commande'));
+        session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
+        return $pdf->download('facture_yelema.pdf');
     }
 
 

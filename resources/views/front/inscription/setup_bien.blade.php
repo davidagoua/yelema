@@ -70,7 +70,9 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-
+    @if(session()->has('success'))
+    swal.fire("{{ session()->get('success') }}");
+    @endif
 
     </script>
 @endpush

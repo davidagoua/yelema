@@ -102,3 +102,14 @@ Route::get('/send-mail', function(Request $request){
     return redirect('/');
 });
 
+
+Route::get('/test-pdf', function(){
+    $commande = \App\Models\Commande::query()->orderByDesc('created_at')->first();
+    $pdf = PDF::loadView('pdf.invoice', compact('commande'));
+    return $pdf->download('facture.pdf');
+});
+
+Route::get('/download-facture/{commande}', function(\App\Models\Commande $commande){
+    $pdf = PDF::loadView('pdf.invoice', compact('commande'));
+    return $pdf->download('facture.pdf');
+})->name('download_facture');
