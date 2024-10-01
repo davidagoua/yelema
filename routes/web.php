@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,3 +114,9 @@ Route::get('/download-facture/{commande}', function(\App\Models\Commande $comman
     $pdf = PDF::loadView('pdf.invoice', compact('commande'));
     return $pdf->download('facture.pdf');
 })->name('download_facture');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('admin.profile.show');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('admin.profile.password');
+});

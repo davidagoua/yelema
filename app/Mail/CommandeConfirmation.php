@@ -12,7 +12,7 @@ use Illuminate\Queue\SerializesModels;
 
 class CommandeConfirmation extends Mailable
 {
-    use Queueable, SerializesModels;
+    use  SerializesModels;
     public Commande $commande;
 
     /**
