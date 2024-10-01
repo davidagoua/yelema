@@ -39,7 +39,7 @@ class CommandeConfirmation extends Mailable
     public function content(): Content
     {
         return (new Content(
-            view: 'mail.commande_confirmation',
+            view: 'pdf.invoice',
         ))->with([
             'commande'=>$this->commande
         ]);

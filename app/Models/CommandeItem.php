@@ -20,4 +20,8 @@ class CommandeItem extends Model
     {
         return $this->belongsTo(Item::class);
     }
+
+    public function getNameAttribute(){
+        return $this->item->name;
+    }
 }
