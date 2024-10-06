@@ -120,3 +120,4 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
     Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('admin.profile.password');
 });
+

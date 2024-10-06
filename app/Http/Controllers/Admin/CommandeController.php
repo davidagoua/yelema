@@ -113,4 +113,6 @@ class CommandeController extends Controller
         return back()->with('success', "Commande supprimée");
     }
 
+    
+
 }

@@ -41,9 +41,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <address>
-                                        <strong>Local:</strong><br>
-                                        <b>Origine:</b> {{ $commande->localisation['origin_type_local'] }}, {{ $commande->localisation['origin-nb_piece'] }} pièces<br>
-                                        <b>Destination:</b> {{ $commande->localisation['destination_type_local'] }}, {{ $commande->localisation['destination_nb_piece'] }} pièces<br>
+                                        <strong>Parcours:</strong><br>
+                                        <b>Origine:</b> {{ $commande->localisation['origine'] }}, {{ $commande->localisation['origin_type_local'] }}, {{ $commande->localisation['origin-nb_piece'] }} pièces<br>
+                                        <b>Destination:</b> {{ $commande->localisation['destination'] }}, {{ $commande->localisation['destination_type_local'] }}, {{ $commande->localisation['destination_nb_piece'] }} pièces<br>
                                     </address>
                                 </div>
                                 <div class="col-md-6 text-md-right">
@@ -58,26 +58,28 @@
 
                     <div class="row mt-4">
                         <div class="col-md-12">
-                            <div class="section-title">Articles</div>
+                            <div class="section-title">Commande</div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover table-md">
                                     <tbody><tr>
                                         <th data-width="40" style="width: 40px;">#</th>
-                                        <th>Nom</th>
-                                        <th class="text-center">Quantité</th>
+                                        <th>Pack</th>
                                         <th class="text-center">Articles</th>
+                                        <th class="text-center">Quantité</th>
                                         <th class="text-center">Prix</th>
                                     </tr>
                                     <tr>
                                         <td>1</td>
-                                        <td>
+                                        <td rowspan="$commande->items()->count()">
                                             {{ $commande->pack->name }}
                                         </td>
+                                        @foreach($commande->items as $item)
                                         <td class="text-center">1</td>
                                         <td class="text-center">
-                                            @foreach($commande->items as $item) {{ $item->name}} x {{ $item->quantity }} <br> @endforeach
+                                             {{ $item->name}} x {{ $item->quantity }} <br>
                                         </td>
-                                        <td class="text-center">
+                                        @endforeach
+                                        <td class="text-center" rowspan="$commande->items()->count()">
                                             {{ $commande->price }} FCFA
                                         </td>
                                     </tr>

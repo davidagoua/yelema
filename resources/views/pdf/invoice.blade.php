@@ -83,20 +83,19 @@
         <table>
             <thead>
                 <tr>
-                    <th>Article</th>
-                    <th>Quantité</th>
+                    <th>Pack</th>
                     <th>Articles</th>
-                    <th>Total</th>
+                    <th>Quantité</th>
                 </tr>
             </thead>
             <tbody>
-              
+
                     <tr>
                         <td>{{ $commande->pack->name }}</td>
                         <td>1</td>
                         <td>@foreach($commande->items as $item) {{ $item->name}} x {{ $item->quantity }} <br> @endforeach</td>
                     </tr>
-                   
+
             </tbody>
         </table>
 
