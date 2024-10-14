@@ -57,12 +57,25 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($commande->items as $citem)
-            <tr>
-                <td>{{ $citem->item->name }}</td>
-                <td style="text-align: center">{{ $citem->quantity }}</td>
-            </tr>
-        @endforeach
+        @foreach($commande->items as $item)
+                                    <tr>
+                                        @if($loop->index == 0)
+                                        <td rowspan="{{ $commande->items()->count()}}" >
+                                            {{ $commande->pack->name }}
+                                        </td>
+                                        @endif
+                                        
+                                        <td class="text-center">{{ $item->name}} </td>
+                                        <td class="text-center">
+                                            x {{ $item->quantity }} <br>
+                                        </td>
+                                        @if($loop->index == 0)
+                                        <td class="text-center" rowspan="$commande->items()->count()">
+                                            {{ $commande->price }} FCFA
+                                        </td>
+                                        @endif
+                                    </tr>
+                                    @endforeach
         </tbody>
 
     </table>

@@ -90,11 +90,21 @@
             </thead>
             <tbody>
 
-                    <tr>
-                        <td>{{ $commande->pack->name }}</td>
-                        <td>1</td>
-                        <td>@foreach($commande->items as $item) {{ $item->name}} x {{ $item->quantity }} <br> @endforeach</td>
-                    </tr>
+                    @foreach($commande->items as $item)
+                                    <tr>
+                                        @if($loop->index == 0)
+                                        <td rowspan="{{ $commande->items()->count()}}" >
+                                            {{ $commande->pack->name }}
+                                        </td>
+                                        @endif
+                                        
+                                        <td class="text-center">{{ $item->name}} </td>
+                                        <td class="text-center">
+                                            x {{ $item->quantity }} <br>
+                                        </td>
+                                        
+                                    </tr>
+                                    @endforeach
 
             </tbody>
         </table>

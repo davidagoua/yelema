@@ -61,29 +61,38 @@
                             <div class="section-title">Commande</div>
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover table-md">
-                                    <tbody><tr>
-                                        <th data-width="40" style="width: 40px;">#</th>
-                                        <th>Pack</th>
-                                        <th class="text-center">Articles</th>
-                                        <th class="text-center">Quantité</th>
-                                        <th class="text-center">Prix</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Pack</th>
+                                            <th class="text-center">Articles</th>
+                                            <th class="text-center">Quantité</th>
+                                            <th class="text-center">Prix</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    @foreach($commande->items as $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td rowspan="$commande->items()->count()">
+                                        @if($loop->index == 0)
+                                        <td rowspan="{{ $commande->items()->count()}}" >
                                             {{ $commande->pack->name }}
                                         </td>
-                                        @foreach($commande->items as $item)
-                                        <td class="text-center">1</td>
+                                        @endif
+                                        
+                                        <td class="text-center">{{ $item->name}} </td>
                                         <td class="text-center">
-                                             {{ $item->name}} x {{ $item->quantity }} <br>
+                                            x {{ $item->quantity }} <br>
                                         </td>
-                                        @endforeach
+                                        @if($loop->index == 0)
                                         <td class="text-center" rowspan="$commande->items()->count()">
                                             {{ $commande->price }} FCFA
                                         </td>
+                                        @endif
                                     </tr>
-
+                                    @endforeach
+                                    
+                                        
+                                        
                                     </tbody></table>
                             </div>
                         </div>

@@ -66,16 +66,25 @@
                                         <th class="text-center">Quantité</th>
                                         <th class="text-center">Prix</th>
                                     </tr>
+                                    @foreach($commande->items as $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>
+                                        @if($loop->index == 0)
+                                        <td rowspan="{{ $commande->items()->count()}}" >
                                             {{ $commande->pack->name }}
                                         </td>
-                                        <td class="text-center">1</td>
+                                        @endif
+                                        
+                                        <td class="text-center">{{ $item->name}} </td>
                                         <td class="text-center">
+                                            x {{ $item->quantity }} <br>
+                                        </td>
+                                        @if($loop->index == 0)
+                                        <td class="text-center" rowspan="$commande->items()->count()">
                                             {{ $commande->price }} FCFA
                                         </td>
+                                        @endif
                                     </tr>
+                                    @endforeach
 
                                     </tbody></table>
                             </div>

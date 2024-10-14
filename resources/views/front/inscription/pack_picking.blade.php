@@ -37,9 +37,6 @@
             </div>
             @if(false)
             <div x-show="false">
-                <button type="submit" formtarget="#form"  class="button today-btn text-white bg-orange-700 !bg-primary-700 dark:bg-orange-600 dark:!bg-primary-600 hover:bg-orange-800 hover:!bg-primary-800 dark:hover:bg-orange-700 dark:hover:!bg-primary-700 focus:ring-4 focus:ring-orange-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Suivant</button>
-            </div>
-            @endif
         </div>
     </form>
 @endsection

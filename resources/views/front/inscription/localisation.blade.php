@@ -7,7 +7,7 @@
 <form action="" method="post">
     @csrf
     <div x-data="{}" class="md:flex mb-16 md:space-x-5 pt-12 md:px-16 px-5">
-        <div class="md:w-1/2" id="drop-target">
+        <div class="md:w-1/2 md:h-[30vh] h-[80vh]" id="drop-target">
             <div id="map" class="shadow-lg rounded"></div>
         </div>
         <div  class="md:w-1/2  mt-2 md:mt-0">
@@ -127,7 +127,7 @@ var origin_marker = null;
 
 
 
-$('#destination_point').leafletLocationPicker();
+// $('#destination_point').leafletLocationPicker();
 
 function getLocation() {
     if (navigator.geolocation) {
