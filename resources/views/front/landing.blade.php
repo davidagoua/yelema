@@ -143,7 +143,7 @@
         </div>
     </div>
 </div>
-<div class="px-24" style="background-image: url(/assets/img/ellipse.png)" >
+<div class="px-24 bg-no-repeat" style="background-image: url(/assets/img/ellipse.png)" >
     <div data-aos="fade-up" class="py-16 flex items-center justify-center align-self-center ">
         <div class="w-3/12">
             <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
