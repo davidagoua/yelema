@@ -12,6 +12,20 @@
         .bg-primary {
             background-color: #C54C44;
         }
+        .floating-image {
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% {
+                transform: skewX(0);
+            }
+            50% {
+                transform: skewX(3deg);
+            }
+            100% {
+                transform: skewX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -49,7 +63,7 @@
             </div>
         </div>
         <div class="md:w-6/12">
-            <img class=" duration-1000 hover:skew-y-2" src="/assets/img/nhu.png" alt="">
+            <img class="floating-image duration-1000 hover:skew-y-2" src="/assets/img/nhu.png" alt="">
         </div>
     </div>
     <svg width="1440" height="130" viewBox="0 0 1440 130" fill="none" xmlns="http://www.w3.org/2000/svg">
