@@ -121,3 +121,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('admin.profile.password');
 });
 
+
+Route::get('/landing', function(){
+    return view('front.landing');
+});
