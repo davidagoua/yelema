@@ -38,7 +38,7 @@
             <a href=""><span class="fab fa-twitter text-white fa-2x"></span></a>
             <a href=""><span class="fab fa-youtube text-white fa-2x"></span></a>
         </div>
-        <div class="flex text-white items-center space-x-5  hidden md:block">
+        <div class="text-white items-center space-x-5  hidden md:flex">
             <div class="font-bold">
                 <a href="" class="text-orange-400">Français</a>
                 <a href="">/</a>
