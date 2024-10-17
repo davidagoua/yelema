@@ -32,13 +32,13 @@
 
     <div class="px-24 flex bg-primary items-center justify-between">
         <div><img src="/assets/img/landing_logo.png" alt=""></div>
-        <div class="flex text-center space-x-3">
+        <div class="flex text-center space-x-3 hidden md:block">
             <a href=""><span class="fab fa-facebook text-white fa-2x"></span></a>
             <a href=""><span class="fab fa-instagram text-white fa-2x"></span></a>
             <a href=""><span class="fab fa-twitter text-white fa-2x"></span></a>
             <a href=""><span class="fab fa-youtube text-white fa-2x"></span></a>
         </div>
-        <div class="flex text-white items-center space-x-5">
+        <div class="flex text-white items-center space-x-5  hidden md:block">
             <div class="font-bold">
                 <a href="" class="text-orange-400">Français</a>
                 <a href="">/</a>
@@ -49,7 +49,7 @@
     </div>
 
 <div  style="background-image: url(/assets/img/ellipse.png)" class=" bg-repeat-y">
-    <div class=" flex items-center pt-4 px-32">
+    <div class=" md:flex items-center pt-4 md:px-32 px-10">
         <div data-aos="fade-up" data-aos="fade-up" data-aos-duration="2000" class="text-center md:text-left pt-12 pb-7 order-last md:order-first  md:w-6/12">
             <h3 class="bg-gradient-to-r from-orange-400 md:text-5xl text-3xl  font-bold to-red-500 inline-block text-transparent bg-clip-text">YELEMA,  VOTRE EQUIPE <br> D'EXPERT
                 DEDIEE AU <br> DEMENAGEMENT</h3>
@@ -71,7 +71,7 @@
         <path d="M892.476 36.9492L884.311 32.3017L883.673 28.3425C883.583 27.5428 883.18 26.8112 882.552 26.3081C881.924 25.805 881.122 25.5716 880.322 25.6589L862.411 28.5478C861.631 28.7235 860.952 29.1994 860.52 29.8725C860.089 30.5455 859.94 31.3615 860.106 32.1436L862.64 47.8549C862.726 48.4811 862.996 49.0676 863.417 49.5395C863.838 50.0113 864.389 50.3473 865.002 50.5045C864.826 51.259 864.837 52.0449 865.034 52.7942C865.23 53.5435 865.606 54.2338 866.128 54.8055C866.651 55.3772 867.305 55.8132 868.034 56.0758C868.762 56.3384 869.544 56.4197 870.311 56.3128C871.078 56.2058 871.808 55.9138 872.437 55.462C873.066 55.0101 873.576 54.412 873.922 53.7191C874.269 53.0263 874.441 52.2596 874.425 51.4851C874.409 50.7107 874.205 49.9518 873.83 49.2739L883.823 47.6622C883.679 48.4158 883.719 49.1929 883.94 49.9277C884.16 50.6625 884.554 51.3334 885.089 51.8835C885.624 52.4336 886.283 52.8467 887.011 53.0879C887.74 53.3291 888.515 53.3912 889.273 53.2691C890.03 53.1469 890.747 52.8441 891.362 52.3861C891.978 51.9282 892.474 51.3287 892.809 50.6384C893.143 49.9481 893.307 49.1873 893.285 48.4204C893.263 47.6536 893.057 46.9033 892.684 46.233L892.998 46.1823C893.415 46.1151 893.788 45.8851 894.035 45.543C894.282 45.2008 894.383 44.7745 894.316 44.3578L893.302 38.0733C893.259 37.8355 893.162 37.6107 893.019 37.4159C892.876 37.2211 892.69 37.0615 892.476 36.9492ZM890.281 39.3342L890.92 43.2935L886.207 44.0537L884.96 36.3238L890.281 39.3342ZM871.256 51.3012C871.306 51.6119 871.263 51.9306 871.132 52.2168C871.001 52.503 870.788 52.7439 870.52 52.9092C870.252 53.0744 869.941 53.1564 869.627 53.145C869.312 53.1335 869.008 53.029 868.753 52.8447C868.498 52.6605 868.303 52.4046 868.193 52.1097C868.083 51.8147 868.063 51.4937 868.136 51.1875C868.209 50.8812 868.37 50.6034 868.601 50.389C868.831 50.1747 869.12 50.0336 869.431 49.9835C869.848 49.9163 870.274 50.0173 870.616 50.2645C870.958 50.5116 871.188 50.8845 871.256 51.3012ZM878.351 45.3208L865.782 47.348L863.248 31.6368L880.53 28.8493L883.064 44.5605L878.351 45.3208ZM890.109 48.2603C890.159 48.571 890.116 48.8896 889.985 49.1758C889.854 49.4621 889.641 49.703 889.373 49.8682C889.105 50.0335 888.795 50.1155 888.48 50.1041C888.165 50.0926 887.861 49.9881 887.606 49.8038C887.351 49.6195 887.156 49.3637 887.046 49.0687C886.937 48.7737 886.917 48.4528 886.989 48.1466C887.062 47.8403 887.224 47.5624 887.454 47.3481C887.685 47.1338 887.974 46.9927 888.285 46.9426C888.701 46.8753 889.128 46.9764 889.47 47.2235C889.812 47.4707 890.042 47.8436 890.109 48.2603Z" fill="#C54C44" fill-opacity="0.5"/>
         <path d="M249.881 12.0161L241.716 7.3686L241.077 3.40936C240.988 2.60965 240.585 1.87806 239.957 1.375C239.329 0.871944 238.527 0.638476 237.727 0.725784L219.816 3.61466C219.036 3.79037 218.357 4.26631 217.925 4.93936C217.494 5.61242 217.345 6.42839 217.51 7.21051L220.045 22.9218C220.131 23.548 220.401 24.1345 220.822 24.6064C221.242 25.0782 221.794 25.4142 222.406 25.5714C222.231 26.3259 222.242 27.1117 222.438 27.8611C222.635 28.6104 223.01 29.3007 223.533 29.8724C224.056 30.4441 224.71 30.8801 225.438 31.1427C226.167 31.4053 226.949 31.4866 227.716 31.3797C228.483 31.2727 229.213 30.9807 229.842 30.5289C230.471 30.077 230.981 29.4789 231.327 28.786C231.674 28.0932 231.846 27.3265 231.83 26.552C231.814 25.7776 231.61 25.0187 231.235 24.3408L241.227 22.7291C241.084 23.4827 241.124 24.2598 241.344 24.9946C241.565 25.7294 241.959 26.4003 242.494 26.9504C243.029 27.5005 243.688 27.9136 244.416 28.1548C245.145 28.396 245.92 28.4581 246.678 28.336C247.435 28.2138 248.152 27.911 248.767 27.453C249.383 26.9951 249.879 26.3956 250.213 25.7053C250.548 25.015 250.711 24.2542 250.69 23.4873C250.668 22.7205 250.462 21.9701 250.089 21.2999L250.403 21.2492C250.819 21.182 251.192 20.952 251.439 20.6099C251.687 20.2677 251.788 19.8414 251.72 19.4247L250.707 13.1402C250.664 12.9024 250.567 12.6776 250.423 12.4828C250.28 12.288 250.095 12.1284 249.881 12.0161ZM247.686 14.4011L248.325 18.3604L243.611 19.1206L242.365 11.3907L247.686 14.4011ZM228.66 26.3681C228.711 26.6788 228.667 26.9974 228.536 27.2837C228.405 27.5699 228.193 27.8108 227.925 27.9761C227.657 28.1413 227.346 28.2233 227.031 28.2119C226.717 28.2004 226.413 28.0959 226.158 27.9116C225.902 27.7274 225.708 27.4715 225.598 27.1766C225.488 26.8816 225.468 26.5606 225.541 26.2544C225.613 25.9481 225.775 25.6703 226.006 25.4559C226.236 25.2416 226.525 25.1005 226.836 25.0504C227.253 24.9832 227.679 25.0842 228.021 25.3314C228.363 25.5785 228.593 25.9514 228.66 26.3681ZM235.756 20.3877L223.187 22.4149L220.653 6.70369L237.935 3.91618L240.469 19.6274L235.756 20.3877ZM247.514 23.3272C247.564 23.6379 247.521 23.9565 247.39 24.2427C247.259 24.529 247.046 24.7699 246.778 24.9351C246.51 25.1003 246.199 25.1824 245.885 25.1709C245.57 25.1595 245.266 25.055 245.011 24.8707C244.756 24.6864 244.561 24.4306 244.451 24.1356C244.341 23.8406 244.322 23.5197 244.394 23.2135C244.467 22.9072 244.629 22.6293 244.859 22.415C245.09 22.2007 245.379 22.0596 245.689 22.0094C246.106 21.9422 246.532 22.0433 246.875 22.2904C247.217 22.5376 247.447 22.9105 247.514 23.3272Z" fill="#C54C44" fill-opacity="0.5"/>
     </svg>
-    <div class="my-16 mx-24">
+    <div class="my-16 md:mx-24 mx-10">
         <div class="text-center">
             <div class="text-center text-5xl font-bold">YELEMA</div>
             <div class="mt-4 text-xl">Déménager sans effort et dans le confort</div>
@@ -86,8 +86,8 @@
                     <circle cx="340.733" cy="340.733" r="293.414" stroke="#C54C44" stroke-opacity="0.5"/>
                 </svg>
             </div>
-            <div class="flex justify-center items-center space-x-5 mt-8">
-                <div class="w-3/12" data-aos="fade-right">
+            <div class="md:flex justify-center items-center space-x-5 mt-8">
+                <div class="md:w-3/12" data-aos="fade-right">
                     <div class="text-right mt-8">
                         <div class="flex justify-end">
                             <div class="px-3 w-min   py-2 text-center rounded bg-[#C54C44]">
@@ -108,7 +108,7 @@
                 <div>
                     <img src="/assets/img/ordi.png" width="400" alt="">
                 </div>
-                <div class="w-3/12" data-aos="fade-left">
+                <div class="md:w-3/12" data-aos="fade-left">
                     <div class="text-left items-end mt-8">
                         <div class="px-3 w-min py-2 text-center rounded bg-[#C54C44]">
                             <div class="text-4xl text-orange-400 font-bold">3</div>
@@ -126,46 +126,46 @@
         </div>
     </div>
 </div>
-<div class="bg-[#FFE4C7] mt-16 px-24 py-16">
+<div class="bg-[#FFE4C7] mt-16 md:px-24 px-10 py-16">
     <div class="text-center">
         <div class="text-center text-5xl font-bold">Comment ça marche</div>
         <div class="mt-4 text-xl">Afin de vivre une expérience exceptionnelle avec SkanCoaching, veuillez suivre <br>
             attentivement les instructions ci-dessous</div>
     </div>
-    <div class="my-16 flex items-center justify-center align-self-center ">
+    <div class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
             <img src="/assets/img/ordi.png" width="400" alt="">
         </div>
         <div class="md:w-2/12"></div>
-        <div class="w-3/12">
+        <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">1</span><span class="text-2xl">ère</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
         </div>
     </div>
 </div>
-<div class="px-24 bg-no-repeat" style="background-image: url(/assets/img/ellipse.png)" >
-    <div data-aos="fade-up" class="py-16 flex items-center justify-center align-self-center ">
-        <div class="w-3/12">
+<div class="md:px-24 px-10 md:Px-10 bg-no-repeat" style="background-image: url(/assets/img/ellipse.png)" >
+    <div data-aos="fade-up" class="py-16 md:flex items-center justify-center align-self-center ">
+        <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
         </div>
         <div class="md:w-2/12"></div>
-        <div>
+        <div class="pt-3">
             <img src="/assets/img/ipad.png" width="400" alt="">
         </div>
     </div>
-    <div data-aos="fade-left" class="my-16 flex items-center justify-center align-self-center ">
+    <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
             <img src="/assets/img/ordi.png" width="400" alt="">
         </div>
         <div class="md:w-2/12"></div>
-        <div class="w-3/12">
+        <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">3</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
         </div>
     </div>
-    <div data-aos="fade-right" class="my-16 flex items-center justify-center align-self-center ">
-        <div class="w-3/12">
+    <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center ">
+        <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
         </div>
@@ -176,9 +176,9 @@
     </div>
 </div>
 <div class=" bg-[#F6C289]" >
-    <div class="flex">
-        <div class="w-1/3">
-            <svg width="270" height="400" viewBox="0 0 720 1060" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <div class="md:flex px-10 md:px-0 items-center">
+        <div class="md:w-1/2 hidden md:block" data-aos="zoom-in-right">
+            <svg width="470" height="690" viewBox="0 0 720 1060" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="688" height="688" fill="url(#pattern0_27_2)"/>
                 <rect x="-146" y="194" width="866" height="866" fill="url(#pattern1_27_2)"/>
                 <defs>
@@ -194,9 +194,40 @@
             </svg>
 
         </div>
-        <div>
-            <div class="p-3 bg-white"></div>
+        <div class="md:w-4/12 py-10" data-aos="zoom-in-left">
+            <div class="mt-8">
+                <h3 class="text-left text-5xl font-bold">Contactez-nous</h3>
+                <div class="mt-4 text-xl">
+                    Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.
+                </div>
+                <form action="" class="mt-8">
+                    <div class="mb-5">
+                        <label for="">Nom & Prénoms</label>
+                        <input type="text" class="w-full mt-3 bg-gray-300 p-3">
+                    </div>
+                    <div class="mb-5">
+                        <label for="">Email</label>
+                        <input type="email" class="w-full mt-3 bg-gray-300 p-3">
+                    </div>
+                    <div class="mb-5">
+                        <label for="">Message</label>
+                        <textarea rows="5" class="w-full mt-3 bg-gray-300 p-3"></textarea>
+                    </div>
+                    <div class="mt-10">
+                        <button type="submit" class="text-center hover:opacity-70 bg-[#C54C44] p-3 w-full text-xl font-bold">Valider</button>
+                    </div>
+                </form>
+            </div>
         </div>
+    </div>
+</div>
+<div class="text-center py-14">
+    <h3 class="text-green-400 text-2xl font-bold">PRÊTS À COMMENCER ? </h3>
+    <div class="text-5xl font-bold mt-4">Rejoignez dès maintenant <br> notre communauté !</div>
+</div>
+<div class="bg-[#C54C44] py-16 px-24 md:flex justify-between" style="background-image: url(/assets/img/rectangle2.png)">
+    <div class="w-1/3">
+        <h3 class="font-bold">YELEMA</h3>
     </div>
 </div>
 
