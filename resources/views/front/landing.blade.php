@@ -90,19 +90,19 @@
                 <div class="md:w-3/12" data-aos="fade-right">
                     <div class="text-right mt-8">
                         <div class="flex justify-end">
-                            <div class="px-3 w-min   py-2 text-center rounded bg-[#C54C44]">
+                            <div class="px-5 w-min   py-2 text-center rounded bg-[#C54C44]">
                                 <span class="text-4xl text-orange-400 font-bold">1</span>
                             </div>
                         </div>
-                        <div class="text-xl mt-2">Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.</div>
+                        <div class="text-xl mt-2">Nous utilisons des matériaux de haute qualité pour protéger vos biens précieux.</div>
                     </div>
                     <div class="text-right mt-12">
                         <div class="flex justify-end">
-                            <div class="px-3 w-min   py-2 text-center rounded bg-[#C54C44]">
+                            <div class="px-5 w-min   py-2 text-center rounded bg-[#C54C44]">
                                 <span class="text-4xl text-orange-400 font-bold">2</span>
                             </div>
                         </div>
-                        <div class="text-xl mt-2">Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.</div>
+                        <div class="text-xl mt-2">Notre flotte moderne assure un transport sûr et efficace de vos affaires.</div>
                     </div>
                 </div>
                 <div>
@@ -110,13 +110,13 @@
                 </div>
                 <div class="md:w-3/12" data-aos="fade-left">
                     <div class="text-left items-end mt-8">
-                        <div class="px-3 w-min py-2 text-center rounded bg-[#C54C44]">
+                        <div class="px-5 w-min py-2 text-center rounded bg-[#C54C44]">
                             <div class="text-4xl text-orange-400 font-bold">3</div>
                         </div>
-                        <div class="text-xl mt-2">Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.</div>
+                        <div class="text-xl mt-2">Nous prenons soin de placer vos meubles et cartons exactement où vous le souhaitez.</div>
                     </div>
                     <div class="text-left mt-12">
-                        <div class="px-3 w-min py-2 text-center rounded bg-[#C54C44]">
+                        <div class="px-5 w-min py-2 text-center rounded bg-[#C54C44]">
                             <span class="text-4xl text-orange-400 font-bold">4</span>
                         </div>
                         <div class="text-xl mt-2">Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.</div>
@@ -225,9 +225,42 @@
     <h3 class="text-green-400 text-2xl font-bold">PRÊTS À COMMENCER ? </h3>
     <div class="text-5xl font-bold mt-4">Rejoignez dès maintenant <br> notre communauté !</div>
 </div>
-<div class="bg-[#C54C44] py-16 px-24 md:flex justify-between" style="background-image: url(/assets/img/rectangle2.png)">
-    <div class="w-1/3">
+<div class="bg-[#C54C44] py-16 px-24 space-x-4 md:flex items-start justify-between" style="background-image: url(/assets/img/rectangle2.png)">
+    <div class="w-1/4">
         <h3 class="font-bold">YELEMA</h3>
+    </div>
+    <div class="w-1/4">
+        <h3 class="font-bold text-xl">YELEMA</h3>
+        <div class="flex-col  mt-3 font-bold space-y-4 flex">
+            <a href="">Coach</a>
+            <a href="">Apprenant</a>
+            <a href="">Mentions légales</a>
+            <a href="">Politique de confidentialité</a>
+            <a href="">Conditions d'utilisation</a>
+        </div>
+    </div>
+    <div class="w-1/4">
+        <h3 class="font-bold">CONTACT</h3>
+        <div class="flex-col mt-3  font-bbold space-y-4 flex">
+            <a href="">+225 00 00 00 00</a>
+            <a href="">+225 00 00 00 00</a>
+            <a href="">adresse@mail.com</a>
+            <div class="flex space-x-3">
+                <a href=""><span class="fab fa-facebook fa-2x"></span></a>
+                <a href=""><span class="fab fa-instagram fa-2x"></span></a>
+                <a href=""><span class="fab fa-twitter fa-2x"></span></a>
+                <a href=""><span class="fab fa-youtube fa-2x"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="w-1/4">
+        <div class="text-2xl font-bold">Newsletter</div>
+        <form action="" class="mt-5">
+            <div class="flex bg-white">
+                <input type="text" class="  px-5 py-3 grow-1" placeholder="Entrez votre email">
+                <button class="bg-orange-400 font-bold w-full focus:ring-none  p-2">OK</button>
+            </div>
+        </form>
     </div>
 </div>
 
