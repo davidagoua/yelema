@@ -225,11 +225,11 @@
     <h3 class="text-green-400 text-2xl font-bold">PRÊTS À COMMENCER ? </h3>
     <div class="text-5xl font-bold mt-4">Rejoignez dès maintenant <br> notre communauté !</div>
 </div>
-<div class="bg-[#C54C44] py-16 px-24 space-x-4 md:flex items-start justify-between" style="background-image: url(/assets/img/rectangle2.png)">
-    <div class="w-1/4">
+<div class="bg-[#C54C44] py-16 md:px-24 px-10 space-x-4 grid md:grid-cols-4 grid-cols-2 items-start justify-between" style="background-image: url(/assets/img/rectangle2.png)">
+    <div class="">
         <h3 class="font-bold">YELEMA</h3>
     </div>
-    <div class="w-1/4">
+    <div class="">
         <h3 class="font-bold text-xl">YELEMA</h3>
         <div class="flex-col  mt-3 font-bold space-y-4 flex">
             <a href="">Coach</a>
@@ -239,7 +239,7 @@
             <a href="">Conditions d'utilisation</a>
         </div>
     </div>
-    <div class="w-1/4">
+    <div class="col-span-2 md:col-span-1">
         <h3 class="font-bold">CONTACT</h3>
         <div class="flex-col mt-3  font-bbold space-y-4 flex">
             <a href="">+225 00 00 00 00</a>
@@ -253,7 +253,7 @@
             </div>
         </div>
     </div>
-    <div class="w-1/4">
+    <div class="col-span-2 md:col-span-1">
         <div class="text-2xl font-bold">Newsletter</div>
         <form action="" class="mt-5">
             <div class="flex bg-white">
