@@ -127,4 +127,15 @@ class HomeController extends Controller
     }
 
 
+    public function new_contact(Request $request)
+    {
+        $data = $request->validate([
+            'nom'=>'required',
+            'email'=>'required',
+            'message'=>'required',
+        ]);
+
+        return back()->with("success", "Message envoyé, nous vous contacterons par mail sous peu.");
+    }
+
 }

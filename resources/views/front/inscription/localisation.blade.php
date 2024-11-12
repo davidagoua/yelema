@@ -7,8 +7,8 @@
 <form action="" method="post">
     @csrf
     <div x-data="{}" class="md:flex mb-16 md:space-x-5 pt-12 md:px-16 px-5">
-        <div class="md:w-1/2 md:h-[30vh] h-[80vh]" id="drop-target">
-            <div id="map" class="shadow-lg rounded"></div>
+        <div class="md:w-1/2 md:h-[30vh] h-[80vh] -z-10" id="drop-target">
+            <div id="map" class="shadow-lg z-0 rounded"></div>
         </div>
         <div  class="md:w-1/2  mt-2 md:mt-0">
             <div class="py-3 px-2 bg-white  ">
@@ -93,7 +93,7 @@
             </div>
         </div>
     </div>
-    <div style="z-index: 1000" class="p-3 bg-white w-full fixed bottom-0 flex shadow-lg justify-between">
+    <div style="z-index: 1000" class="p-3 bg-white w-full z-10 fixed bottom-0 flex shadow-lg justify-between">
         <div x-show="false">
         </div>
         <div>

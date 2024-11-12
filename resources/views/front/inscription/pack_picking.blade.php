@@ -37,6 +37,7 @@
             </div>
             @if(false)
             <div x-show="false">
+                @endif
         </div>
     </form>
 @endsection
