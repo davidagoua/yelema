@@ -67,14 +67,14 @@
                     <div class="flex space-x-4 w-full justify-center items-center p-4 md:p-5 text-center border-gray-200 rounded-b dark:border-gray-600">
 
 
-                        <button data-modal-hide="default-modal" type="button" class="text-white flex items-center  text-center hover:text-green-500 w-2/4 bg-green-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <a href="https://wa.me/+2250565331668" data-modal-hide="default-modal" type="button" class="text-white flex items-center  text-center hover:text-green-500 w-2/4 bg-green-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <img src="/assets/img/w.png" width="30" alt="">
                             <span> Par whatsapp</span>
-                        </button>
-                        <button data-modal-hide="default-modal" type="button" class=" flex border- items-center  text-center hover:text-black w-2/4 bg-white border-black border hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        </a>
+                        <a href="tel://+2250565331668" data-modal-hide="default-modal" type="button" class=" flex border- items-center  text-center hover:text-black w-2/4 bg-white border-black border hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <span class="fa fa-phone"></span>&nbsp;
                             <span> Par Appel</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -7,17 +7,17 @@
 <form action="" method="post">
     @csrf
     <div x-data="{}" class="md:flex mb-16 md:space-x-5 pt-12 md:px-16 px-5">
-        <div class="md:w-1/2 md:h-[30vh] h-[80vh] -z-10" id="drop-target">
-            <div id="map" class="shadow-lg z-0 rounded"></div>
+        <div class="md:w-1/2 md:h-[30vh] h-[80vh] -z-10 md:z-10" id="drop-target">
+            <div id="map" class="shadow-lg z-0 md:z-10 rounded"></div>
         </div>
         <div  class="md:w-1/2  mt-2 md:mt-0">
             <div class="py-3 px-2 bg-white  ">
-                <div class="text-center font-bold text-lg">Localisation</div>
+                <div class="text-center font-bold text-xl">Localisation</div>
                 <div class="flex justify-center">
                     <div class="w-full p-3">
                         <div class="w-full">
                             <span>Lieu de ramassage</span>
-                            <input name="origine" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Position actuelle"/>
+                            <input name="origine" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Adresse d'origine"/>
                         </div>
                         <div class="flex space-x-3 mt-3 ">
                             <div class="w-1/2">
@@ -46,7 +46,7 @@
                         <hr class="m-5">
                         <div class="w-full">
                             <span>Destination</span>
-                            <input id="destination_point" name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Position actuelle"/>
+                            <input id="destination_point" name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Adresse de destination"/>
                         </div>
                         <div class="flex space-x-3 mt-3 ">
                             <div class="w-1/2">
@@ -76,7 +76,7 @@
 
                     </div>
                 </div>
-                <div class="text-center font-bold text-lg">Date et heure</div>
+                <div class="text-center font-bold text-xl">Date et heure</div>
                 <div class="flex px-2 mt-3 space-x-3 ">
                     <div class="w-1/2">
                         <input min="{{ now()->format('Y-m-d') }}" class="p-2 bg-gray-100 border-gray-300 border w-full" name="date" type="date" placeholder="Adresse de destination"/>
@@ -172,7 +172,7 @@ document.querySelector('#destination_point').addEventListener('focus', ()=>{
         var coordinates = e.latlng;
         destLatitude = coordinates.lat.toFixed(6);
         destLongitude = coordinates.lng.toFixed(6);
-
+        console.log(destLatitude + ", " + destLongitude)
         var inputField = document.getElementById("destination_point");
         inputField.value = destLatitude + ", " + destLongitude;
 
