@@ -139,7 +139,7 @@
 <div class="bg-[#FFE4C7] mt-16 md:px-24 px-10 py-16">
     <div class="text-center">
         <div class="text-center text-5xl font-bold">Comment ça marche</div>
-        <div class="mt-4 text-xl">Afin de vivre une expérience exceptionnelle avec SkanCoaching, veuillez suivre <br>
+        <div class="mt-4 text-xl">Afin de vivre une expérience exceptionnelle avec Yelema, veuillez suivre <br>
             attentivement les instructions ci-dessous</div>
     </div>
     <div class="my-16 md:flex items-center justify-center align-self-center ">
