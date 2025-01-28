@@ -17,7 +17,7 @@
                     <div class="w-full p-3">
                         <div class="w-full">
                             <span>Lieu de ramassage</span>
-                            <input name="origine" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Adresse d'origine"/>
+                            <input name="origine" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Adresse d'origine"/>
                         </div>
                         <div class="flex space-x-3 mt-3 ">
                             <div class="w-1/2">
@@ -40,13 +40,13 @@
                             </div>
                             <div class="w-1/2">
                                 <span>Nombre de pièces</span>
-                                <input type="number" name="origin-nb_piece" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="">
+                                <input type="number" required name="origin-nb_piece" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="">
                             </div>
                         </div>
                         <hr class="m-5">
                         <div class="w-full">
                             <span>Destination</span>
-                            <input id="destination_point" name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Adresse de destination"/>
+                            <input id="destination_point" required name="destination" class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" placeholder="Adresse de destination"/>
                         </div>
                         <div class="flex space-x-3 mt-3 ">
                             <div class="w-1/2">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="w-1/2">
                                 <span>Nombre de pièces</span>
-                                <input type="number" name="destination_nb_piece" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="">
+                                <input type="number" required name="destination_nb_piece" class="block p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="">
                             </div>
                         </div>
                         <hr class="m-5">

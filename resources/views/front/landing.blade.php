@@ -149,7 +149,7 @@
         <div class="md:w-2/12"></div>
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">1</span><span class="text-2xl">ère</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
+            <div class="mt-5">Pour une meilleure prise en charge cliquez sur le bouton "Programmer un démenagement" pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
         </div>
     </div>
 </div>
@@ -157,32 +157,43 @@
     <div data-aos="fade-up" class="py-16 md:flex items-center justify-center align-self-center ">
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
+            <div class="mt-5">Remplissez le formulaire en precisant les adresses d'origine, de destination ainsi que les type d'appartement concernés, veuillez aussi programmer la date et l'horraire de démenagement</div>
         </div>
         <div class="md:w-2/12"></div>
         <div class="pt-3">
-            <img src="/assets/img/ipad.png" width="400" alt="">
+            <img src="/assets/img/localisation.png" width="400" alt="">
         </div>
     </div>
     <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
-            <img src="/assets/img/ordi.png" width="400" alt="">
+            <img src="/assets/img/items.png" width="400" alt="">
         </div>
         <div class="md:w-2/12"></div>
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">3</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
+            <div class="mt-5">Précisez ensuite le type et le nombre d'article à transporter, pour plus de precision veuillez remplir le champ Commentaire</div>
         </div>
     </div>
     <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center ">
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Pour une meilleure prise en charge cliquez Ici pour rejoindre notre plate-forme de prise de rendez-vous afin de programmer un déménagement selon votre convenance </div>
+            <div class="mt-5">Choississez le Pack qui convient le plus a votre besoin en examinant soigneusement les offres presentées</div>
         </div>
         <div class="md:w-2/12"></div>
         <div>
             <img src="/assets/img/ordi.png" width="400" alt="">
         </div>
+    </div>
+    <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
+        <div class="md:w-2/12"></div>
+        <div>
+            <img src="/assets/img/ordi.png" width="400" alt="">
+        </div>
+        <div class="md:w-3/12">
+            <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
+            <div class="mt-5">Entrez vos informations personnelles afin de permettre à notre équipe de vous contacter une fois que votre devis sera prêts</div>
+        </div>
+
     </div>
 </div>
 <div class=" bg-[#F6C289]" >
