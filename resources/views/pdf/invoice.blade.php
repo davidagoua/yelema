@@ -97,12 +97,12 @@
                                             {{ $commande->pack->name }}
                                         </td>
                                         @endif
-                                        
+
                                         <td class="text-center">{{ $item->name}} </td>
                                         <td class="text-center">
                                             x {{ $item->quantity }} <br>
                                         </td>
-                                        
+
                                     </tr>
                                     @endforeach
 
@@ -118,7 +118,7 @@
         </div>
 
         <div class="footer">
-            <p>Merci pour votre confiance. Pour toute question, veuillez nous contacter à support@yelema.com</p>
+            <p>Merci pour votre confiance. Pour toute question, veuillez nous contacter à +225 01 03 39 34 70</p>
         </div>
     </div>
 </body>

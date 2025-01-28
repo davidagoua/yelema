@@ -19,15 +19,15 @@
                     </div>
                     <div class="mb-4 w-full">
                         <span>Prénoms</span>
-                        <input name="prenoms" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <span>Email</span>
-                        <input name="email" type="email" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre email"/>
+                        <input name="prenoms"  class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
                     </div>
                     <div class="mb-4 w-full">
                         <span>Contact</span>
                         <input name="contact" type="phone" pattern="[0-9]+" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre contact"/>
+                    </div>
+                    <div class="mb-4 w-full">
+                        <span>Email</span>
+                        <input name="email" type="email" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre email"/>
                     </div>
                     <p class="mt-5">&nbsp;</p>
                 </div>

@@ -124,5 +124,5 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/landing', function(){
-    return view('front.landing');
+    return view('front.index');
 });
