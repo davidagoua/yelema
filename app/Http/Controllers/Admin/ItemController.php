@@ -21,7 +21,17 @@ class ItemController extends Controller
             ->groupBy('status')
             ->pluck('nb','status')->toArray();
 
-
+        $colors = [
+            10 => '#3788d8',
+            20 => '#f0ad4e',
+            50 => '#5cb85c',
+            0 => '#d9534f'
+        ];
+        $states = [
+            0 => 'Nouvelle',
+            10 => 'Validée',
+            50 => 'Terminée'
+        ];
 
 
         $somme_avance = Avance::query()->select('montant')->sum('montant');
@@ -40,7 +50,9 @@ class ItemController extends Controller
             'completed'=> $commandes[CommandeState::COMPLETED->value] ?? 0,
             'somme_avance'=>$somme_avance,
             'somme_commande'=>$somme_commande,
-            'total_commandes'=>Commande::query()->count()
+            'total_commandes'=>Commande::query()->count(),
+            'colors'=>$colors,
+            'states'=>$states
         ]);
     }
 

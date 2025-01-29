@@ -72,6 +72,15 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
+                <div class="d-flex">
+                    @foreach($states as $state => $value)
+                        <div class="mr-4 d-flex align-items-center">
+                            <div style="height: 10px; width: 10px; border-radius: 10px; background-color: {{ $colors[$state] }}"></div>
+                            <div class="ml-2">{{ $value }}</div>
+                        </div>
+                    @endforeach
+
+                </div>
                 <div id='calendar'></div>
             </div>
         </div>
