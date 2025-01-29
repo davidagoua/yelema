@@ -91,14 +91,14 @@ class CommandeController extends Controller
     public function commandeByDate(Request $request)
     {
         $colors = [
-            CommandeState::VALIDATED->value => '#3788d8',
-            CommandeState::PENDING->value => '#f0ad4e',
-            CommandeState::COMPLETED->value => '#5cb85c',
-            CommandeState::NEWS->value => '#d9534f'
+            10 => '#3788d8',
+            20 => '#f0ad4e',
+            50 => '#5cb85c',
+            0 => '#d9534f'
         ];
 
         $commandes = Commande::query()
-            ->whereIn('status',  [CommandeState::VALIDATED, CommandeState::PENDING])
+            ->whereIn('status',  [CommandeState::VALIDATED, CommandeState::PENDING, CommandeState::NEWS])
             ->get()
             ->map(function($commande) use ($colors){
                 return [
