@@ -217,27 +217,23 @@
         </div>
         <div class="md:w-4/12 py-10" data-aos="zoom-in-left">
             <form action="{{ route('front.new_contact') }}" method="post" class="mt-8">
-                <h3 class="text-left text-5xl font-bold">Contactez-nous</h3>
-                <div class="mt-4 md:text-xl">
-                    Notre plateforme vous offre un accès facile à une liste diversifiée de coachs hautement qualifiés et expérimentés.
+                <h3 class="text-left text-5xl mb-5 font-bold">Contactez-nous</h3>
+                @csrf
+                <div class="mb-5">
+                    <label for="">Nom & Prénoms</label>
+                    <input type="text" name="name" class="w-full mt-3 bg-gray-300 p-3">
                 </div>
-                <form action="" class="mt-8">
-                    <div class="mb-5">
-                        <label for="">Nom & Prénoms</label>
-                        <input type="text" name="nom" class="w-full mt-3 bg-gray-300 p-3">
-                    </div>
-                    <div class="mb-5">
-                        <label for="">Email</label>
-                        <input type="email" name="email" class="w-full mt-3 bg-gray-300 p-3">
-                    </div>
-                    <div class="mb-5">
-                        <label for="">Message</label>
-                        <textarea rows="5" name="message" class="w-full mt-3 bg-gray-300 p-3"></textarea>
-                    </div>
-                    <div class="mt-10">
-                        <button type="submit" class="text-center hover:opacity-70 bg-[#C54C44] p-3 w-full text-xl font-bold">Valider</button>
-                    </div>
-                </form>
+                <div class="mb-5">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="w-full mt-3 bg-gray-300 p-3">
+                </div>
+                <div class="mb-5">
+                    <label for="">Message</label>
+                    <textarea rows="5" name="message" class="w-full mt-3 bg-gray-300 p-3"></textarea>
+                </div>
+                <div class="mt-10">
+                    <button type="submit" class="text-center hover:opacity-70 bg-[#C54C44] p-3 w-full text-xl font-bold">Valider</button>
+                </div>
             </form>
         </div>
     </div>
@@ -304,7 +300,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="">Nom & Prénoms</label>
-                            <input class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" type="text" name="nom" required>
+                            <input class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" type="text" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="">Email</label>

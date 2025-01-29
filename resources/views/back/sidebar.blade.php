@@ -26,6 +26,10 @@
                 <a href="{{ route('admin.settings') }}" class="nav-link "><i
                         class="fas fa-cog"></i><span>Pack & Articles</span></a>
             </li>
+            <li class="dropdown {{ request()->route()->getName() === 'admin.messages' ? 'active' : ''  }}">
+                <a href="{{ route('admin.messages') }}" class="nav-link "><i
+                        class="fas fa-envelope"></i><span>Messages</span></a>
+            </li>
         </ul>
 
     </aside>

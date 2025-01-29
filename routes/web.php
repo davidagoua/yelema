@@ -42,6 +42,8 @@ Route::prefix('/admin')
     ->name('admin.')
     ->group(function(){
 
+        Route::get('/messages', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('messages');
+
         Route::controller(ItemController::class)
             ->prefix('/items')
             ->name('items.')
@@ -126,3 +128,5 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/landing', function(){
     return view('front.index');
 });
+
+Route::post('/new-contact', [\App\Http\Controllers\Admin\MessageController::class, 'store'])->name('front.new_contact');
