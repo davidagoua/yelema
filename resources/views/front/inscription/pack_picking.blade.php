@@ -16,7 +16,7 @@
                 <div class="bg-white sm:mt-2 col">
                     <div class="p-3 text-center bg-[#C54C44] text-lg">{{ $pack->name }}</div>
                     <div class="p-4 bg-white">
-                        {{ $pack->description }}
+                        {!!  $pack->description !!}
                         @foreach($pack->specs()->get() as $spec)
                             <div class="flex py-2">
                                 <b class="w-1/2">{{ $spec->label }}</b>

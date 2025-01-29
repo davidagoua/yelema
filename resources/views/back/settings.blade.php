@@ -1,7 +1,20 @@
 @extends('back.base')
 
 
+
+@push('scripts')
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script>
+    const quill = new Quill('#pack-description', {
+        theme: 'snow'
+    });
+</script>
+@endpush
+
+
 @section('content')
+
     <div class="">
         <div class="col-md-12 col-12">
             <div class="card">
@@ -21,7 +34,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for=""><b>Description</b></label>
-                                            <textarea  required name="description" rows="5" class="form-control"></textarea>
+                                            <textarea id="pack-description"  required name="description" rows="5" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-6">

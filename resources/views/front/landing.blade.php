@@ -154,13 +154,13 @@
     </div>
 </div>
 <div class="md:px-24 px-10 md:Px-10 bg-no-repeat" style="background-image: url(/assets/img/ellipse.png)" >
-    <div data-aos="fade-up" class="py-16 md:flex items-center justify-center align-self-center ">
-        <div class="md:w-3/12 sm:order-last">
+    <div data-aos="fade-up" class="py-16 md:flex flex items-center justify-center align-self-center ">
+        <div class="md:w-3/12 order-last md:order-first w-full">
             <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Remplissez le formulaire en précisant les adresses d'origine, de destination ainsi que les types d'appartement concernés, veuillez aussi programmer la date et l'horraire de démenagement</div>
         </div>
         <div class="md:w-2/12"></div>
-        <div class="pt-3 sm:order-first">
+        <div class="pt-3 order-first md:order-last w-full">
             <img src="/assets/img/localisation.png" width="400" alt="">
         </div>
     </div>
@@ -175,12 +175,12 @@
         </div>
     </div>
     <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center ">
-        <div class="md:w-3/12 sm:order-last">
+        <div class="md:w-3/12 order-first sm:order-last">
             <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Choississez le Pack qui convient le plus a votre besoin en vue beneficier d'une expérience unique et adaptée</div>
         </div>
         <div class="md:w-2/12"></div>
-        <div class="sm:order-first">
+        <div class="sm:order-first order-last">
             <img src="/assets/img/ordi.png" width="400" alt="">
         </div>
     </div>
@@ -247,14 +247,10 @@
     <div class="md:text-5xl text-xl font-bold mt-4">Rejoignez dès maintenant <br> notre communauté !</div>
 </div>
 <div class="bg-[#C54C44] py-16 md:px-24 px-10 space-x-4 grid md:grid-cols-4 grid-cols-2 items-start justify-between" style="background-image: url(/assets/img/rectangle2.png)">
-    <div class="">
-        <h3 class="font-bold">YELEMA</h3>
-    </div>
+
     <div class="">
         <h3 class="font-bold text-xl">YELEMA</h3>
         <div class="flex-col  mt-3 font-bold space-y-4 flex">
-            <a href="">Coach</a>
-            <a href="">Apprenant</a>
             <a href="">Mentions légales</a>
             <a href="">Politique de confidentialité</a>
             <a href="">Conditions d'utilisation</a>
@@ -263,23 +259,23 @@
     <div class="col-span-2 md:col-span-1">
         <h3 class="font-bold">CONTACT</h3>
         <div class="flex-col mt-3  font-bbold space-y-4 flex">
-            <a href="">+225 00 00 00 00</a>
-            <a href="">+225 00 00 00 00</a>
+            <a href="">+225 01 03393 470</a>
             <a href="">adresse@mail.com</a>
             <div class="flex space-x-3">
-                <a href=""><span class="fab fa-facebook fa-2x"></span></a>
-                <a href=""><span class="fab fa-instagram fa-2x"></span></a>
-                <a href=""><span class="fab fa-twitter fa-2x"></span></a>
+                <a href="https://www.facebook.com/profile.php?id=100091747836953"><span class="fab fa-facebook fa-2x"></span></a>
+                <a href=""><span class="fab fa-tiktok fa-2x"></span></a>
+                <a href="https://ci.linkedin.com/company/yelemamoving?trk=similar-pages"><span class="fab fa-linkedin fa-2x"></span></a>
                 <a href=""><span class="fab fa-youtube fa-2x"></span></a>
             </div>
         </div>
     </div>
     <div class="col-span-2 md:col-span-1">
         <div class="text-2xl font-bold">Newsletter</div>
-        <form action="" class="mt-5">
+        <form method="post" action="http://listmonk-x8o04cckwsooo0kk8scc88kk.147.93.94.108.sslip.io/subscription/form" class="mt-5">
             <div class="flex bg-white">
                 <input type="text" class="  px-5 py-3 grow-1" placeholder="Entrez votre email">
-                <button class="bg-orange-400 font-bold w-full focus:ring-none  p-2">OK</button>
+                <input id="5a877" type="hidden" name="l" checked value="5a8775c4-7ab0-484d-ada7-e63aa90fa751" />
+                <button type="submit" value="Subscribe" class="bg-orange-400 font-bold w-full focus:ring-none  p-2">OK</button>
             </div>
         </form>
     </div>
