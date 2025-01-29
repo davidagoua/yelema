@@ -70,7 +70,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
+
                                     @foreach($commande->items as $item)
                                     <tr>
                                         @if($loop->index == 0)
@@ -78,7 +78,7 @@
                                             {{ $commande->pack->name }}
                                         </td>
                                         @endif
-                                        
+
                                         <td class="text-center">{{ $item->name}} </td>
                                         <td class="text-center">
                                             x {{ $item->quantity }} <br>
@@ -90,9 +90,9 @@
                                         @endif
                                     </tr>
                                     @endforeach
-                                    
-                                        
-                                        
+
+
+
                                     </tbody></table>
                             </div>
                         </div>
@@ -104,9 +104,8 @@
                         @if($commande->status == \App\Models\CommandeState::NEWS->value)
                         <button data-toggle="modal" data-target="#validate-modal" class="btn btn-primary btn-icon icon-left"><i class="fas fa-credit-card"></i> Valider</button>
                         @elseif($commande->status == \App\Models\CommandeState::VALIDATED->value)
-                        @elseif($commande->status == \App\Models\CommandeState::PENDING->value)
                         <button data-toggle="modal" data-target="#modal-avance" class="btn btn-primary btn-icon icon-left"><i class="fas fa-download"></i> Ajouter une avance</button>
-                        <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::COMPLETED]) }}" class="btn btn-success btn-icon icon-left"><i class="fas fa-check"></i> Terminer</a>
+                        <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::COMPLETED]) }}" class="btn btn-success btn-icon icon-left"><i class="fas fa-check"></i> Finaliser</a>
                         @endif
                         <a onclick="return confirm('Voulez-vous vraiment executer cette action ?')" href="{{ route('admin.set_status', ['commande'=>$commande, 'status'=>\App\Models\CommandeState::CANCELED]) }}" class="btn  btn-outline-danger btn-icon icon-left"><i class="fas fa-times"></i>Annuler</a>
                     </div>

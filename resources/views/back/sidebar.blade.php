@@ -17,9 +17,6 @@
             <li class=" {{ request()->route()->getName() === 'admin.commande_valide' ? 'active' : ''  }}">
                 <a href="{{ route('admin.commande_valide') }}" class="nav-link "><i class="fas fa-check-circle"></i><span>Validé</span><span class="badge badge-pill" x-text="nbCommande[10] ?? 0"></span></a>
             </li>
-            <li class=" {{ request()->route()->getName() === 'admin.commande_pending' ? 'active' : ''  }}">
-                <a href="{{ route('admin.commande_pending') }}" class="nav-link "><i class="fas fa-hourglass-end"></i><span>A effectuer</span><span class="badge badge-pill" x-text="nbCommande[20] ?? 0"></span></a>
-            </li>
             <li class=" {{ request()->route()->getName() === 'admin.commande_completed' ? 'active' : ''  }}">
                 <a href="{{ route('admin.commande_completed') }}" class="nav-link "><i class="fas fa-box"></i><span>Terminées</span><span class="badge badge-pill" x-text="nbCommande[50] ?? 0"></span></a>
             </li>

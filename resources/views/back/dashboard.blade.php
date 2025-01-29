@@ -6,26 +6,6 @@
     <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="card card-statistic-2">
             <div class="card-stats">
-                <div class="card-stats-title">Resumé commande -
-                    <div class="dropdown d-inline">
-                        <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="orders-month">Août</a>
-                        <ul class="dropdown-menu dropdown-menu-sm">
-                            <li class="dropdown-title">Selectionner le mois</li>
-                            <li><a href="#" class="dropdown-item">Janvier</a></li>
-                            <li><a href="#" class="dropdown-item">Fevrier</a></li>
-                            <li><a href="#" class="dropdown-item">Mars</a></li>
-                            <li><a href="#" class="dropdown-item">Avril</a></li>
-                            <li><a href="#" class="dropdown-item">Mai</a></li>
-                            <li><a href="#" class="dropdown-item">Juin</a></li>
-                            <li><a href="#" class="dropdown-item">Juillet</a></li>
-                            <li><a href="#" class="dropdown-item active">Août</a></li>
-                            <li><a href="#" class="dropdown-item">Septembre</a></li>
-                            <li><a href="#" class="dropdown-item">Octobre</a></li>
-                            <li><a href="#" class="dropdown-item">Novembre</a></li>
-                            <li><a href="#" class="dropdown-item">Decembre</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="card-stats-items">
                     <div class="card-stats-item">
                         <div class="card-stats-item-count">{{ $newsone }}</div>
@@ -35,10 +15,7 @@
                         <div class="card-stats-item-count">{{ $validated }}</div>
                         <div class="card-stats-item-label">Validées</div>
                     </div>
-                    <div class="card-stats-item">
-                        <div class="card-stats-item-count">{{ $pending }}</div>
-                        <div class="card-stats-item-label">A effectuer</div>
-                    </div>
+
                 </div>
             </div>
             <div class="card-icon shadow-primary bg-primary">

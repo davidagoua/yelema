@@ -90,12 +90,19 @@ class CommandeController extends Controller
 
     public function commandeByDate(Request $request)
     {
+        $colors = [
+            CommandeState::VALIDATED->value => '#3788d8',
+            CommandeState::PENDING->value => '#f0ad4e',
+            CommandeState::COMPLETED->value => '#5cb85c',
+            CommandeState::NEWS->value => '#d9534f'
+        ];
+
         $commandes = Commande::query()
             ->whereIn('status',  [CommandeState::VALIDATED, CommandeState::PENDING])
             ->get()
-            ->map(function($commande){
+            ->map(function($commande) use ($colors){
                 return [
-                    'color'=>'#3788d8',
+                    'color'=>$colors[$commande->status],
                     'id'=>$commande->id,
                     'start'=>$commande->localisation['date'],
                     'end'=>$commande->localisation['date'],
@@ -113,6 +120,6 @@ class CommandeController extends Controller
         return back()->with('success', "Commande supprimée");
     }
 
-    
+
 
 }
