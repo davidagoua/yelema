@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/assets/css/components.css">
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+
+    @stack('styles')
 </head>
 
 <body>
