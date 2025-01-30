@@ -7,8 +7,10 @@ use App\Models\CommandeItem;
 use App\Models\CommandeState;
 use App\Models\Item;
 use App\Models\Pack;
+use App\Services\NotificationService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Laravel\Telescope\Telescope;
 
 
 class HomeController extends Controller
@@ -105,10 +107,11 @@ class HomeController extends Controller
                     'quantity'=> $quantity
                 ]);
             });
-
-            \Illuminate\Support\Facades\Mail::to([$commande->email])->send(
-                new \App\Mail\CommandeRegisteredMail($commande)
-            );
+            try{
+                NotificationService::send($commande->contact, "Votre commande a été enregistrée, vous serez contacté sous peu.");
+            }catch (\Exception $e){
+                // do nothing
+            }
             session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
             session()->flash('get_pdf', true);
             session()->flash('commande_id', $commande->id);
