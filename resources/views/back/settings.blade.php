@@ -6,7 +6,7 @@
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 <script>
-    const quill = new Quill('textarea', {
+    const quill = new Quill('.pack-description', {
         theme: 'snow'
     });
 </script>
@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for=""><b>Description</b></label>
-                                            <textarea   required name="description" rows="15" class="form-control pack-description"></textarea>
+                                            <div  required name="description" rows="15" class="form-control pack-description"></div>
                                         </div>
                                     </div>
                                     <div class="col-6">
