@@ -12,6 +12,13 @@
     const quill = new Quill('.pack-description', {
         theme: 'snow'
     });
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const description = document.querySelector('#description');
+        description.value = quill.getSemanticHTML();
+        e.target.submit();
+    }
 </script>
 @endpush
 
@@ -26,7 +33,7 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        <form action="{{ route("admin.settings.store_pack") }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
+                        <form onsubmit="onSubmit" action="{{ route("admin.settings.store_pack") }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
                             <div class="">
                                 <div class="d-flex">
                                     @csrf
@@ -37,7 +44,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for=""><b>Description</b></label>
-                                            <div  required name="description" rows="15" class="form-control pack-description"></div>
+                                            <div   rows="15" class="form-control pack-description"></div>
+                                            <input id="description" type="hidden" name="description">
                                         </div>
                                     </div>
                                     <div class="col-6">
