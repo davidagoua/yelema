@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for=""><b>Description</b></label>
-                                            <textarea   required name="description" rows="5" class="form-control pack-description"></textarea>
+                                            <textarea   required name="description" rows="15" class="form-control pack-description"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-6">
