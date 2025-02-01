@@ -179,7 +179,7 @@
     </div>
     <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center flex-col-reverse md:flex-row">
         <div class="md:order-last">
-            <img src="/assets/img/ordi.png" width="400" alt="">
+            <img src="/assets/img/pack.jpg" width="400" alt="">
         </div>
         <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12 md:order-first">
@@ -192,7 +192,7 @@
     </div>
     <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
-            <img src="/assets/img/ordi.png" width="400" alt="">
+            <img src="/assets/img/info.jpg" width="400" alt="">
         </div>
         <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12">
@@ -276,7 +276,7 @@
         <h3 class="font-bold">CONTACT</h3>
         <div class="flex-col mt-3  font-bbold space-y-4 flex">
             <a href="">+225 01 03393 470</a>
-            <a href="">adresse@mail.com</a>
+            <a href="">support@yelema.online</a>
             <div class="flex space-x-3">
                 <a href="https://www.facebook.com/profile.php?id=100091747836953"><span class="fab fa-facebook fa-2x"></span></a>
                 <a href=""><span class="fab fa-tiktok fa-2x"></span></a>
