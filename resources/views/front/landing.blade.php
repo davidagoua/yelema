@@ -179,7 +179,7 @@
     </div>
     <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center flex-col-reverse md:flex-row">
         <div class="md:order-last">
-            <img src="/assets/img/pack.jpg" width="400" alt="">
+            <img src="/assets/img/pack.png" width="400" alt="">
         </div>
         <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12 md:order-first">
@@ -192,7 +192,7 @@
     </div>
     <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
-            <img src="/assets/img/info.jpg" width="400" alt="">
+            <img src="/assets/img/info.png" width="400" alt="">
         </div>
         <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12">
