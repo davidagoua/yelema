@@ -14,6 +14,7 @@
     });
 
     const onSubmit = (e) => {
+        alert('royal')
         e.preventDefault();
         const description = document.querySelector('#description');
         description.value = quill.getSemanticHTML();

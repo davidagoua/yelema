@@ -56,7 +56,7 @@
                 <a href="" >Anglais</a>
             </div>
             <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="p-3 rounded hidden md:block  bg-gradient-to-r font-bold text-lg text-white from-orange-400 to-orange-600"> <i class="fa-solid fa-headset mr-2"></i> Parler à un agent</button>
-            <a href="#" data-modal-target="default-modal" data-modal-toggle="default-modal" class=" md:hidden text-white rounded text-center p-1 bg-orange-400 "> <i class="fa-solid fa-headset mr-2"></i></a>
+            <a href="#contact"  class=" md:hidden text-white rounded text-center p-1 bg-orange-400 "> <i class="fa-solid fa-headset mr-2"></i></a>
         </div>
     </div>
 
@@ -153,42 +153,48 @@
         </div>
     </div>
 </div>
+<div class="p-1 w-full bg-primary"></div>
 <div class="md:px-24 px-10 md:Px-10 bg-no-repeat" style="background-image: url(/assets/img/ellipse.png)" >
-    <div data-aos="fade-up" class="py-16 md:flex flex items-center justify-center align-self-center ">
-        <div class="md:w-3/12 order-last md:order-first w-full">
-            <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Remplissez le formulaire en précisant les adresses d'origine, de destination ainsi que les types d'appartement concernés, veuillez aussi programmer la date et l'horraire de démenagement</div>
-        </div>
-        <div class="md:w-2/12"></div>
-        <div class="pt-3 order-first md:order-last w-full">
+
+    <div data-aos="fade-right" class="pt-10 md:flex items-center justify-center align-self-center flex-col-reverse md:flex-row">
+        <div class="md:order-last">
             <img src="/assets/img/localisation.png" width="400" alt="">
+        </div>
+        <div class="md:w-2/12 mt-5"></div>
+        <div class="md:w-3/12 md:order-first">
+            <h2 class="font-bold"><span class="text-5xl">2</span><span class="text-2xl">ème</span> <span
+                    class="text-5xl">étape</span></h2>
+            <div class="mt-5">Remplissez le formulaire en précisant les adresses d'origine, de destination ainsi que les types d'appartement concernés, veuillez aussi programmer la date et l'horraire de démenagement</div>
         </div>
     </div>
     <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
         <div>
             <img src="/assets/img/items.png" width="400" alt="">
         </div>
-        <div class="md:w-2/12"></div>
+        <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">3</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Précisez ensuite le type et le nombre d'article à transporter, pour plus de precision veuillez remplir le champ Commentaire</div>
         </div>
     </div>
-    <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center ">
-        <div class="md:w-3/12 order-first sm:order-last">
-            <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
-            <div class="mt-5">Choississez le Pack qui convient le plus a votre besoin en vue beneficier d'une expérience unique et adaptée</div>
-        </div>
-        <div class="md:w-2/12"></div>
-        <div class="sm:order-first order-last">
+    <div data-aos="fade-right" class="my-16 md:flex items-center justify-center align-self-center flex-col-reverse md:flex-row">
+        <div class="md:order-last">
             <img src="/assets/img/ordi.png" width="400" alt="">
+        </div>
+        <div class="md:w-2/12 mt-5"></div>
+        <div class="md:w-3/12 md:order-first">
+            <h2 class="font-bold"><span class="text-5xl">4</span><span class="text-2xl">ème</span> <span
+                    class="text-5xl">étape</span></h2>
+            <div class="mt-5">Choississez le Pack qui convient le plus a votre besoin en vue beneficier d'une expérience
+                unique et adaptée
+            </div>
         </div>
     </div>
     <div data-aos="fade-left" class="my-16 md:flex items-center justify-center align-self-center ">
-        <div class="md:w-2/12"></div>
         <div>
             <img src="/assets/img/ordi.png" width="400" alt="">
         </div>
+        <div class="md:w-2/12 mt-5"></div>
         <div class="md:w-3/12">
             <h2 class="font-bold"><span class="text-5xl">5</span><span class="text-2xl">ème</span> <span class="text-5xl">étape</span></h2>
             <div class="mt-5">Entrez vos informations personnelles afin de permettre à notre équipe de vous contacter une fois que votre devis sera prêts</div>
@@ -215,7 +221,7 @@
             </svg>
 
         </div>
-        <div class="md:w-4/12 py-10" data-aos="zoom-in-left">
+        <div id="contact" class="md:w-4/12 py-10" data-aos="zoom-in-left">
             <form action="{{ route('front.new_contact') }}" method="post" class="mt-8">
                 <h3 class="text-left text-5xl mb-5 font-bold">Contactez-nous</h3>
                 @csrf
@@ -233,14 +239,28 @@
                 </div>
                 <div class="mt-10">
                     <button type="submit" class="text-center hover:opacity-70 bg-[#C54C44] p-3 w-full text-xl font-bold">Valider</button>
+
+                </div>
+                <div class="mt-10 space-x-3 flex">
+                    <a href="https://wa.me/2250103393470?text=Bonjour%20Yelema%2C%20je%20suis%20interreser%20par%20l'une%20de%20vos%20offres" data-modal-hide="default-modal" type="button" class="text-white flex items-center  text-center hover:text-green-500 w-2/4 bg-green-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <img src="/assets/img/w.png" width="30" alt="">
+                        <span> Par whatsapp</span>
+                    </a>
+                    <a href="tel://+2250103393470" data-modal-hide="default-modal" type="button" class=" flex border- items-center  text-center hover:text-black w-2/4 bg-white border-black border hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <span class="fa fa-phone"></span>&nbsp;
+                        <span> Par Appel</span>
+                    </a>
                 </div>
             </form>
         </div>
     </div>
 </div>
 <div class="text-center py-14">
-    <h3 class="text-green-400 text-2xl font-bold">PRÊTS À COMMENCER ? </h3>
+    <h3 class="text-green-700 text-2xl font-bold">PRÊTS À COMMENCER ? </h3>
     <div class="md:text-5xl text-xl font-bold mt-4">Rejoignez dès maintenant <br> notre communauté !</div>
+    <div class="mt-10 text-center mx-auto  w-full justify-center md:justify-start flex space-x-3" >
+        <a href="{{ route('front.inscription.localisation') }}"  class="md:w-4/12 mx-auto block text-center hover:scale-105 transition-all duration-200  bg-gradient-to-r from-red-500 via-red-400 to-red-500 rounded-md text-xs md:text-lg p-3 font-bold text-white">Programmer un demangement</a>
+    </div>
 </div>
 <div class="bg-[#C54C44] py-16 md:px-24 px-10 space-x-4 grid md:grid-cols-4 grid-cols-2 items-start justify-between" style="background-image: url(/assets/img/rectangle2.png)">
 
@@ -334,7 +354,16 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "5c54616d-9467-4ebc-89ab-e5acb48680c8",
+            apiHost: "http://flowise-n0gs48gcc0ss0cks0ok8k8k4.147.93.94.108.sslip.io",
+        })
+    </script>
     <script>
+
+
         AOS.init();
         @if(session()->has('success'))
         Swal.fire("{{ session()->get('success') }}");
@@ -342,6 +371,7 @@
             session()->forget('success');
         @endphp
         @endif
+
     </script>
 </body>
 </html>
