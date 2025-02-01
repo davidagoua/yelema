@@ -22,7 +22,7 @@
                         <input name="prenoms"  class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre prenoms"/>
                     </div>
                     <div class="mb-4 w-full">
-                        <span>Contact</span>
+                        <span>Contact (Whatsapp)</span>
                         <input name="contact" type="phone" pattern="[0-9]+" required class="p-2 bg-gray-100 mt-2 border-gray-300 border w-full" id="origine_point" placeholder="Entrez votre contact"/>
                     </div>
                     <div class="mb-4 w-full">

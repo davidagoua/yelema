@@ -82,7 +82,7 @@ class HomeController extends Controller
         if($request->isMethod('post')){
             $data = $request->validate([
                'nom'=>'required',
-               'prenoms'=>'required' ,
+                'prenoms' => 'nullable',
                 'email'=>'required|email',
                 'contact'=>'required'
             ]);
