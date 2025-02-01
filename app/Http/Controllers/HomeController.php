@@ -88,7 +88,7 @@ class HomeController extends Controller
             ]);
             $commande = new Commande([
                 'nom'=>$data['nom'],
-                'prenoms'=>$data['prenoms'],
+                'prenoms'=>$data['prenoms'] ?? "",
                 'email'=>$data['email'],
                 'contact'=>$data['contact'],
                 'pack_id'=> (int) $request->input('pack'),
