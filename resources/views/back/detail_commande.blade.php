@@ -95,6 +95,12 @@
 
                                     </tbody></table>
                             </div>
+                            @if($command->comment != "")
+                                <div class="mt-5">
+                                    <b>* Commentaire</b>
+                                    <p>{{$commande->comment}}</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

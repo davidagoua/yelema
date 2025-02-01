@@ -112,7 +112,7 @@ class HomeController extends Controller
             }catch (\Exception $e){
                 // do nothing
             }
-            session()->flash('success', "Votre demande a été enregistré vous serez contact sous peu");
+            session()->flash('success', "Votre demande a été enregistré vous serez contacté sous peu");
             session()->flash('get_pdf', true);
             session()->flash('commande_id', $commande->id);
             return redirect()->route('front.index');
