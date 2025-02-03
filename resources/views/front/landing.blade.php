@@ -242,7 +242,7 @@
 
                 </div>
                 <div class="mt-10 space-x-3 flex">
-                    <a href="https://wa.me/2250103393470?text=Bonjour%20Yelema%2C%20je%20suis%20interreser%20par%20l'une%20de%20vos%20offres" data-modal-hide="default-modal" type="button" class="text-white flex items-center  text-center hover:text-green-500 w-2/4 bg-green-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a href="https://wa.me/2250103393470?text=Bonjour%20Yelema%2C%20je%20suis%20interresé%20par%20l'une%20de%20vos%20offres" data-modal-hide="default-modal" type="button" class="text-white flex items-center  text-center hover:text-green-500 w-2/4 bg-green-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         <img src="/assets/img/w.png" width="30" alt="">
                         <span> Par whatsapp</span>
                     </a>
