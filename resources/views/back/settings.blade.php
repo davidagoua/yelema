@@ -12,7 +12,24 @@
     const quill = new Quill('.pack-description', {
         theme: 'snow'
     });
+    $('#packform').on('submit', (e)=>{
 
+        e.preventDefault();
+        const description = document.querySelector('#description');
+        description.value = quill.getSemanticHTML();
+        e.target.submit();
+    })
+
+    const quillupdate = new Quill('.pack-descriptionupdate', {
+        theme: 'snow'
+    });
+    $('#packformupdate').on('submit', (e)=>{
+        alert('royal')
+        e.preventDefault();
+        const description = document.querySelector('#descriptionupdate');
+        description.value = quillupdate.getSemanticHTML();
+        e.target.submit();
+    })
     const onSubmit = (e) => {
         alert('royal')
         e.preventDefault();
@@ -34,7 +51,7 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        <form onsubmit="onSubmit" action="{{ route("admin.settings.store_pack") }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
+                        <form onsubmit="onSubmit" id="packform" action="{{ route("admin.settings.store_pack") }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
                             <div class="">
                                 <div class="d-flex">
                                     @csrf
@@ -194,7 +211,7 @@
                         Modifier le pack
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('admin.settings.update_pack', ['pack'=>$pack]) }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
+                        <form id="packformupdate" action="{{ route('admin.settings.update_pack', ['pack'=>$pack]) }}" x-data="{ns:[0]}" enctype="multipart/form-data" method="post">
                             <div class="">
                                 <div class="">
                                     @csrf
@@ -205,7 +222,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for=""><b>Description</b></label>
-                                            <textarea  required name="description"  rows="5" class="form-control pack-description">{{ $pack->description }}</textarea>
+                                            <div  class="pack-descriptionupdate"></div>
+                                            <input type="hidden" id="descriptionupdate"  required name="description" >
                                         </div>
                                     </div>
                                 </div>

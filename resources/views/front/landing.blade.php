@@ -287,9 +287,14 @@
     </div>
     <div class="col-span-2 md:col-span-1">
         <div class="text-2xl font-bold">Newsletter</div>
-        <form method="post" action="http://listmonk-x8o04cckwsooo0kk8scc88kk.147.93.94.108.sslip.io/subscription/form" class="mt-5">
+        <form method="post" action="http://listmonk-g8ok4wgkso04s4oogcoo8s44.147.93.94.108.sslip.io/subscription/form" class="mt-5">
             <div class="flex bg-white">
+                <input type="hidden" name="nonce" />
                 <input type="text" class="  px-5 py-3 grow-1" placeholder="Entrez votre email">
+                <p>
+                    <input id="ec4c2" type="checkbox" name="l" checked value="ec4c2f51-ea92-4d0c-b870-4c775e1da861" />
+                    <label for="ec4c2">Opt-in list</label>
+                </p>
                 <input id="5a877" type="hidden" name="l" checked value="5a8775c4-7ab0-484d-ada7-e63aa90fa751" />
                 <button type="submit" value="Subscribe" class="bg-orange-400 font-bold w-full focus:ring-none  p-2">OK</button>
             </div>
